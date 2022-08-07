@@ -1,0 +1,35 @@
+@import "mixins";
+@import "variables";
+
+.shopLanding {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+
+    @include media-lg {
+        grid-template-columns: 0.5fr 0.5fr 1fr;
+        grid-template-rows: auto;
+    }
+
+    &_content {
+        grid-column: 1/-1;
+        @include flex-center(column, center, center);
+        background-color: $light-brown;
+
+        @include media-lg {
+            grid-column: auto;
+        }
+
+        &_text {
+            font-weight: 400;
+            font-size: 0.9rem;
+            margin: 1rem 0;
+        }
+
+        &_btn {
+            border: solid 1px $dark-brown;
+            padding: 0.5rem 1rem;
+            background-color: #fff;
+        }
+    }
+}

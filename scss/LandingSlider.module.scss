@@ -1,0 +1,79 @@
+@import "mixins";
+@import "variables";
+
+.landingSlider {
+    display: grid;
+    grid-template-columns: 4fr 1fr;
+    margin-bottom: 1rem;
+
+    @include media-lg {
+        grid-template-columns: 1fr;
+        min-height: 25vh;
+    }
+
+    &_content {
+        @include flex-center(row, center, flex-start);
+        background-color: $light-brown;
+        padding: 1rem;
+        margin-right: 1rem;
+
+        @include media-lg {
+            width: 55%;
+        }
+
+        @include media-xl {
+            width: 70%;
+        }
+
+        &_text {
+            @include flex-center(column, flex-start, center);
+            max-width: 50%;
+           margin-left: 1rem;
+
+            .heading {
+                margin: 1rem 0;
+                font-size: 1.2rem;
+            }
+        }
+    }
+
+    &_arrows {
+        @include flex-center(column, flex-end, space-between);
+
+        @include media-lg {
+            @include flex-center(row, flex-end, flex-end);
+            width: 50%;
+        }
+
+        @include media-xl {
+            width: 70%;
+        }
+
+        button svg {
+            border: solid 1px $light-brown;
+            border-radius: 50%;
+            padding: 0.9rem 1rem;
+            color: $light-brown;
+
+            @include media-lg {
+                margin: 2rem 0 1.5rem 2rem;
+            }
+
+            @include media-xl {
+                margin: 1rem 0 1rem 2rem;
+            }
+        }
+
+        button svg:nth-child(1) {
+            @include media-lg {
+                transform: rotate(-90deg);
+            }
+        }
+
+        button svg:nth-child(2) {
+            @include media-lg {
+                transform: rotate(-90deg);
+            }
+        }
+    }
+}

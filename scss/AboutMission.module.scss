@@ -1,0 +1,21 @@
+@import "mixins";
+@import "variables";
+
+.mission {
+    padding: 1rem;
+    
+    @include media-lg {
+        grid-column: 1/-1;
+        width: 80%;
+    }
+
+    @include media-xl {
+        grid-column: auto;
+    }
+
+    &_text {
+        margin: 1rem 0;
+        font-weight: 400;
+        font-size: 0.9rem;
+    }
+}

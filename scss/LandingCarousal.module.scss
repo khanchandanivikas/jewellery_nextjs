@@ -1,0 +1,20 @@
+@import "mixins";
+@import "variables";
+
+.carousal {
+    background-size: cover !important;
+    background-repeat: no-repeat !important;
+    background-position: center !important;
+    height: 30vh;
+    margin: 2rem 0;
+
+    @include media-lg {
+        height: 40vh;
+        margin: 3rem 0;
+    }
+
+    @include media-xl {
+        height: 95vh;
+        margin: 0;
+    }
+}

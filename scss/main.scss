@@ -1,0 +1,57 @@
+@import "resets";
+@import "functions";
+@import "mixins";
+@import "variables";
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+body {
+    font-family: 'Inter', sans-serif;
+    min-height: 100vh;
+
+    // @include media-sm {
+    //     @include background-image("../images/mobile-bg.jpg");
+    // }
+
+    // @include media-md {
+    //     @include background-image("../images/tablet-bg.jpg");
+    // }
+
+    // @include media-lg {
+    //     @include background-image("../images/tablet-bg.jpg");
+    // }
+
+    // @include media-xl {
+    //     @include background-image("../images/desktop-bg.jpg");
+    // }
+}
+
+img {
+    width: 100%;
+    height: auto;
+}
+
+p {
+    letter-spacing: 1px;
+    line-height: 1.7;
+    color: $text-color;
+}
+
+button {
+    outline: none;
+    background: transparent;
+    border: none;
+}
+
+input {
+    outline: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h4,
+h5,
+h6 {
+    color: $heading-color;
+}

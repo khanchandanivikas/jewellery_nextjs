@@ -1,0 +1,17 @@
+@import "mixins";
+@import "variables";
+
+.myFooter {
+   @include flex-center(row, center, center);
+   margin-top: 2rem;
+
+   &_text {
+       font-size: 0.9rem;
+       font-weight: 500;
+       padding-bottom: 1rem;
+
+       .fa-copyright {
+           color: $dark-brown;
+       }
+   }
+}

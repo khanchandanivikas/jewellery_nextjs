@@ -9,9 +9,16 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "gsap": "^3.10.4",
     "next": "12.1.6",
     "react": "18.2.0",
-    "react-dom": "18.2.0"
+    "react-dom": "18.2.0",
+    "sass": "^1.54.0",
+    "@fortawesome/fontawesome-svg-core": "^6.1.1",
+    "@fortawesome/free-brands-svg-icons": "^6.1.1",
+    "@fortawesome/free-solid-svg-icons": "^6.1.1",
+    "@fortawesome/react-fontawesome": "^0.1.18",
+    "hamburger-react": "^2.5.0"
   },
   "devDependencies": {
     "eslint": "8.18.0",

@@ -1,0 +1,27 @@
+@import "mixins";
+@import "variables";
+
+
+.landingCarousal_dots {
+    @include flex-center(row, center, center);
+    display: none;
+
+    svg {
+        margin: 0.5rem 0.4rem;
+    }
+
+    svg:nth-child(1) {
+        color: $dark-brown;
+    }
+
+    svg:nth-child(2),
+    svg:nth-child(3) {
+        color: transparent;
+        border: solid 1px $dark-brown;
+        border-radius: 50%;
+    }
+
+    @include media-lg {
+        @include flex-center(column, center, center);
+    }
+}

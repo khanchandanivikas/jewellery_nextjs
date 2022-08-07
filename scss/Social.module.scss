@@ -1,0 +1,25 @@
+@import "mixins";
+@import "variables";
+
+.socialIcons {
+    padding: 1rem;
+
+    &_list {
+        @include flex-center(row, center, center);
+        list-style: none;
+
+        @include media-lg {
+            @include flex-center(column, center, center);
+        }
+
+        &_link {
+            text-decoration: none;
+        }
+    }
+
+    .fa-brands {
+        padding: 0.5rem 0.4rem;
+        cursor: pointer;
+        color: $dark-brown;
+    }
+}

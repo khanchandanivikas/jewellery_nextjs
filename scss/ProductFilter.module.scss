@@ -1,0 +1,17 @@
+@import "mixins";
+@import "variables";
+
+.filterBox {
+   @include flex-center(row, center, space-between);
+   padding: 1rem;
+
+   &_dropdowns {
+       &_filter, &_sort {
+           outline: none;
+           border: none;
+           border-bottom: solid 1px $dark-brown;
+           margin-left: 1rem;
+           background: transparent;
+       }
+   }
+}

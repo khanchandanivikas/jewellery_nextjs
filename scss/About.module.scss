@@ -1,0 +1,14 @@
+@import "mixins";
+@import "variables";
+
+.about {
+    @include media-lg {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+
+    @include media-xl {
+        grid-template-rows: 0.5fr 1fr 0.1fr;
+        padding: 1rem;
+    }
+}

@@ -1,0 +1,22 @@
+@import "mixins";
+@import "variables";
+
+.productWrapper {
+    padding: 1rem;
+
+    @include media-lg {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 2rem;
+        justify-content: flex-start;
+        align-items: flex-start;
+
+        // &_content {
+        //     min-height: 85vh;
+        // }
+    }   
+
+    // &_content {
+    //     min-height: 90vh;
+    // }
+}

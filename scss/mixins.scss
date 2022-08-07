@@ -1,0 +1,58 @@
+@import "variables";
+
+@mixin flex-center($flex-direction, $flex-align, $flex-justify) {
+    display: flex;
+    flex-direction: $flex-direction;
+    align-items: $flex-align;
+    justify-content: $flex-justify;
+}
+
+@mixin background-image ($url) {
+    background-image: url($url);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+@mixin transition {
+    transition: all 0.2s ease;
+}
+
+@mixin media-sm {
+    @media only screen and (max-width: 481px) {
+        @content;
+    }
+}
+
+// @mixin media-md {
+//     @media only screen and (min-width: 482px) and (max-width: 768px) {
+//         @content;
+//     }
+// }
+@mixin media-md {
+    @media only screen and (min-width: 482px) {
+        @content;
+    }
+}
+
+// @mixin media-lg {
+//     @media only screen and (min-width: 769px) and (max-width: 1024px) {
+//         @content;
+//     }
+// }
+@mixin media-lg {
+    @media only screen and (min-width: 769px) {
+        @content;
+    }
+}
+
+// @mixin media-xl {
+//     @media only screen and (min-width: 1025px) {
+//         @content;
+//     }
+// }
+@mixin media-xl {
+    @media only screen and (min-width: 1025px) {
+        @content;
+    }
+}

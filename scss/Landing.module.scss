@@ -1,0 +1,23 @@
+@import "mixins";
+@import "variables";
+
+.landingContainer {
+    padding: 1rem;
+
+    @include media-lg {
+        margin-right: 4rem;
+        padding: 2rem;
+    }
+
+    @include media-xl {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 45vh 45vh;
+        gap: 2rem;
+
+        .carousal {
+            grid-column: 2/3;
+            grid-row: 1/-1;
+        }
+    }
+}

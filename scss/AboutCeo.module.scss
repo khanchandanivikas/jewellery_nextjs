@@ -1,0 +1,39 @@
+@import "mixins";
+@import "variables";
+
+.ceo {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    padding: 1rem;
+    grid-column: 1/-1;
+
+    @include media-lg {
+        grid-template-columns: 1fr 1fr;
+        gap: 4rem;
+    }
+
+    @include media-xl {
+        grid-column: auto;
+        gap: 2rem;
+    }
+
+    &_content {
+        @include flex-center(column, flex-start, flex-start);
+        margin-top: 1rem;
+        font-weight: 400;
+        font-size: 0.9rem;
+
+        @include media-lg {
+            margin-top: 0;
+        }
+
+        @include media-lg {
+            @include flex-center(column, flex-start, space-between);
+        }
+
+        &_name {
+            margin-top: 1.5rem;
+        }
+    }
+}

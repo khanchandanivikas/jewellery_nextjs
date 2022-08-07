@@ -1,0 +1,26 @@
+@import "mixins";
+@import "variables";
+
+.contact {
+    @include media-xl {
+        @include flex-center(column, none, flex-end);
+    }
+
+    &_heading {
+        margin-top: 1rem;
+        margin-bottom: 0.5rem;
+    }
+
+    &_info {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+        font-size: 0.9rem;
+
+        &_text {
+            margin: 0.5rem 0;
+            font-weight: 400;
+            font-size: 0.9rem;
+        }
+    }
+}
