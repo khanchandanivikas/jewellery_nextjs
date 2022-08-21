@@ -15,12 +15,6 @@
         margin: 1.5rem 0;
     }
 
-    &_btn {
-        border: solid 1px $dark-brown;
-        color: $dark-brown;
-        padding: 0.5rem 1rem;
-    }
-
     @include media-lg {
         width: 55%;
         min-height: 20vh;

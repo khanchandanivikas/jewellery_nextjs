@@ -2,13 +2,15 @@
 @import "variables";
 
 .about {
+    padding: 1.5rem;
+
     @include media-lg {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
+        @include grid(1fr 1fr, none, none);
+        grid-template-rows: 0.5fr 1fr 1fr;
+        padding: 1.5rem 5%;
     }
 
     @include media-xl {
-        grid-template-rows: 0.5fr 1fr 0.1fr;
-        padding: 1rem;
+        grid-template-rows: 1fr 1fr;
     }
 }

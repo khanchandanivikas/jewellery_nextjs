@@ -6,16 +6,18 @@
     @include flex-center(row, center, center);
     display: none;
 
-    svg {
+    .dotActive, .dotInactive {
         margin: 0.5rem 0.4rem;
+        @include transition;
     }
 
-    svg:nth-child(1) {
+    .dotActive {
         color: $dark-brown;
+        border-radius: 50%;
+        border: solid 1px transparent;
     }
 
-    svg:nth-child(2),
-    svg:nth-child(3) {
+    .dotInactive {
         color: transparent;
         border: solid 1px $dark-brown;
         border-radius: 50%;

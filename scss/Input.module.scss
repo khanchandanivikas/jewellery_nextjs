@@ -1,0 +1,8 @@
+@import "mixins";
+@import "variables";
+
+.input {
+    border : 1px solid $dark-brown;
+    padding: 0.5rem;
+    width: 100%;
+}

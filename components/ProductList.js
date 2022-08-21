@@ -3,7 +3,6 @@ import { faCircle, faBasketShopping } from "@fortawesome/free-solid-svg-icons";
 import Image from "next/image";
 import styles from "../scss/ProductList.module.scss";
 import ProductOne from "../images/product1.jpg";
-import ProductTwo from "../images/product2.jpg";
 
 const ProductList = () => {
   return (
@@ -24,7 +23,9 @@ const ProductList = () => {
               14k Yellow Gold
             </p>
           </div>
-          <FontAwesomeIcon icon={faBasketShopping} />
+          <button className={styles.products_item_details_cartBtn}>
+            <FontAwesomeIcon icon={faBasketShopping} />
+          </button>
         </div>
       </div>
       <div className={styles.products_item}>
@@ -43,7 +44,9 @@ const ProductList = () => {
               14k Yellow Gold
             </p>
           </div>
-          <FontAwesomeIcon icon={faBasketShopping} />
+         <button className={styles.products_item_details_cartBtn}>
+            <FontAwesomeIcon icon={faBasketShopping} />
+          </button>
         </div>
       </div>
       <div className={styles.products_item}>
@@ -62,7 +65,9 @@ const ProductList = () => {
               14k Yellow Gold
             </p>
           </div>
-          <FontAwesomeIcon icon={faBasketShopping} />
+         <button className={styles.products_item_details_cartBtn}>
+            <FontAwesomeIcon icon={faBasketShopping} />
+          </button>
         </div>
       </div>
       <div className={styles.products_item}>
@@ -81,7 +86,9 @@ const ProductList = () => {
               14k Yellow Gold
             </p>
           </div>
-          <FontAwesomeIcon icon={faBasketShopping} />
+         <button className={styles.products_item_details_cartBtn}>
+            <FontAwesomeIcon icon={faBasketShopping} />
+          </button>
         </div>
       </div>
       <div className={styles.products_item}>
@@ -100,7 +107,9 @@ const ProductList = () => {
               14k Yellow Gold
             </p>
           </div>
-          <FontAwesomeIcon icon={faBasketShopping} />
+         <button className={styles.products_item_details_cartBtn}>
+            <FontAwesomeIcon icon={faBasketShopping} />
+          </button>
         </div>
       </div>
       <div className={styles.products_item}>
@@ -119,7 +128,9 @@ const ProductList = () => {
               14k Yellow Gold
             </p>
           </div>
-          <FontAwesomeIcon icon={faBasketShopping} />
+         <button className={styles.products_item_details_cartBtn}>
+            <FontAwesomeIcon icon={faBasketShopping} />
+          </button>
         </div>
       </div>
     </div>

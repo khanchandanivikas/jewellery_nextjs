@@ -5,14 +5,19 @@ const LandingCarousal = (props) => {
   const index = props.index;
 
   return (
-    <div
-      style={{
-        background: `url(${
-          index === 0 ? images[index + 1].src : images[index - 1].src
-        })`,
-      }}
-      className={styles.carousal}
-    ></div>
+    <div>
+      {images.map((image, i) => {
+        return (
+          <div
+            key={image.title}
+            style={{
+              background: `url(/images/${image.name})`,
+            }}
+            className={i === index ? styles.carousal : styles.carousal_hidden}
+          ></div>
+        );
+      })}
+    </div>
   );
 };
 

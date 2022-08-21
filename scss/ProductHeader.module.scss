@@ -2,21 +2,9 @@
 @import "variables";
 
 .product {
-    padding-top: 1rem;
-    margin-bottom: 4rem;
-
-    @include media-lg {
-        padding-top: 0;
-    }
-
     &_description {
         margin: 1rem 0;
         @include flex-center(row, center, flex-start);
-
-        &_text {
-            line-height: 1.4;
-            font-size: 0.8rem;
-        }
 
         svg:nth-child(1) {
             color: #E9D590;
@@ -46,6 +34,6 @@
         border: solid 1px $dark-brown;
         padding: 0.5rem 1rem;
         background-color: #fff;
-        margin-top: 1rem;
+        margin: 1rem 0;
     }
 }

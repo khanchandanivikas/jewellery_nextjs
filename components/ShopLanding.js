@@ -2,6 +2,7 @@ import Image from "next/image";
 import styles from "../scss/ShopLanding.module.scss";
 import landingImage1 from "../images/shop-image1.jpg";
 import landingImage2 from "../images/shop-image2.jpg";
+import Button from "../components/Button";
 
 const ShopLanding = () => {
   return (
@@ -23,9 +24,7 @@ const ShopLanding = () => {
         <p className={styles.shopLanding_content_text}>
           Fine jewellery to feel confident in
         </p>
-        <button className={styles.shopLanding_content_btn}>
-          Shop best sellers
-        </button>
+        <Button text="Shop best sellers" />
       </div>
     </div>
   );

@@ -4,9 +4,9 @@ import styles from "../scss/AboutCeo.module.scss";
 
 const AboutCeo = () => {
   return (
-    <div className={styles.ceo}>
+    <section className={styles.ceo}>
       <div className={styles.ceo_image}>
-        <Image src={CeoImage} width={355} height={370} alt="CEO_midas" />
+        <Image src={CeoImage} width={400} height={450} alt="CEO_midas" />
       </div>
       <div className={styles.ceo_content}>
         <p className={styles.ceo_content_message}>
@@ -15,7 +15,7 @@ const AboutCeo = () => {
         </p>
         <p className={styles.ceo_content_name}>- Vikas Khanchandani, CEO</p>
       </div>
-    </div>
+    </section>
   );
 };
 

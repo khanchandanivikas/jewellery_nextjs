@@ -28,6 +28,7 @@ body {
 img {
     width: 100%;
     height: auto;
+    pointer-events: none;
 }
 
 p {
@@ -40,6 +41,7 @@ button {
     outline: none;
     background: transparent;
     border: none;
+    cursor: pointer;
 }
 
 input {

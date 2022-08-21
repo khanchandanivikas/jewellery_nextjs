@@ -4,13 +4,22 @@ import LandingContent from "../components/LandingContent";
 import LandingCarousal from "../components/LandingCarousal";
 import LandingSlider from "../components/LandingSlider";
 import Aside from "../components/Aside";
-import slider1 from "../images/landing-slider.jpg";
-import slider2 from "../images/landing-carousal.jpg";
 
 export default function Home() {
-  const images = [slider1, slider2];
+  const images = [
+    {
+      name: "landing-slider.jpg",
+      number: "1",
+      title: "Bright Side Collection",
+    },
+    {
+      name: "landing-carousal.jpg",
+      number: "2",
+      title: "Dark Side Collection",
+    },
+  ];
   const [index, setIndex] = useState(0);
-  // eslint-disable-next-line
+
   const handleClicknext = () => {
     if (index === images.length - 1) {
       setIndex(0);
@@ -19,10 +28,10 @@ export default function Home() {
     }
   };
 
-  useEffect(() => {
-    const handleAutoplay = setInterval(handleClicknext, 5000);
-    return () => clearInterval(handleAutoplay);
-  }, [handleClicknext]);
+  // useEffect(() => {
+  //   const handleAutoplay = setInterval(handleClicknext, 5000);
+  //   return () => clearInterval(handleAutoplay);
+  // }, [handleClicknext]);
 
   return (
     <div>
@@ -35,7 +44,7 @@ export default function Home() {
           handleClicknext={handleClicknext}
         />
       </div>
-      <Aside />
+      <Aside images={images} index={index} setIndex={setIndex} />
     </div>
   );
 }

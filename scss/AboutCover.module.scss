@@ -1,0 +1,7 @@
+@import "mixins";
+@import "variables";
+
+.aboutCover {
+    @include background-image("/images/about-cover.jpg");
+    min-height: 300px;
+}

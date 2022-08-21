@@ -2,10 +2,7 @@
 @import "variables";
 
 .sidebar {
-    z-index: -1;
-    width: 3.5rem;
     
-
     @include media-lg {
         @include flex-center(column, center, space-between);
         min-height: 100vh;

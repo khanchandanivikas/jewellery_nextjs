@@ -11,30 +11,35 @@ const Hamburger = (props) => {
       }
     >
       <ul id="ham" className={styles.hamburgerMenu_list}>
-        <li className={styles.hamburgerMenu_list_link}>
-          <Link href="/" onClick={toggleHamburger}>
-            HOME
-          </Link>
+        <li
+          onClick={toggleHamburger}
+          className={styles.hamburgerMenu_list_link}
+        >
+          <Link href="/">HOME</Link>
         </li>
-        <li className={styles.hamburgerMenu_list_link}>
-          <Link href="/about" onClick={toggleHamburger}>
-            ABOUT
-          </Link>
+        <li
+          onClick={toggleHamburger}
+          className={styles.hamburgerMenu_list_link}
+        >
+          <Link href="/about">ABOUT</Link>
         </li>
-        <li className={styles.hamburgerMenu_list_link}>
-          <Link href="/shop" onClick={toggleHamburger}>
-            SHOP
-          </Link>
+        <li
+          onClick={toggleHamburger}
+          className={styles.hamburgerMenu_list_link}
+        >
+          <Link href="/shop">SHOP</Link>
         </li>
-        <li className={styles.hamburgerMenu_list_link}>
-          <Link href="/contact" onClick={toggleHamburger}>
-            CONTACT
-          </Link>
+        <li
+          onClick={toggleHamburger}
+          className={styles.hamburgerMenu_list_link}
+        >
+          <Link href="/contact">CONTACT</Link>
         </li>
-        <li className={styles.hamburgerMenu_list_link}>
-          <Link href="/product" onClick={toggleHamburger}>
-            CATEGORIES
-          </Link>
+        <li
+          onClick={toggleHamburger}
+          className={styles.hamburgerMenu_list_link}
+        >
+          <Link href="/product">CATEGORIES</Link>
         </li>
       </ul>
     </div>

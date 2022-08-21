@@ -2,17 +2,17 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faCircle
 } from "@fortawesome/free-solid-svg-icons";
+import Image from "next/image";
 import styles from "../scss/ProductCarousal.module.scss";
 import ProductImage from "../images/product-image.jpg";
 
 const ProductCarousal = () => {
   return (
     <div className={styles.productCarousal}>
-      <img
-        className={styles.productCarousal_image}
+      <Image
         src={ProductImage.src}
-        width={480}
-        height={480}
+        width={768}
+        height={768}
         alt="product_image"
       />
       <div className={styles.productCarousal_dots}>

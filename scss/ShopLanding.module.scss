@@ -2,8 +2,8 @@
 @import "variables";
 
 .shopLanding {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+    @include grid(1fr 1fr, auto, auto);
+    gap: 0;
     grid-template-rows: 1fr 1fr;
 
     @include media-lg {
@@ -26,7 +26,7 @@
             margin: 1rem 0;
         }
 
-        &_btn {
+        button {
             border: solid 1px $dark-brown;
             padding: 0.5rem 1rem;
             background-color: #fff;

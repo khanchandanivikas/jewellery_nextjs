@@ -1,3 +1,4 @@
+import Button from "./Button";
 import styles from "../scss/LandingContent.module.scss";
 
 const LandingContent = () => {
@@ -11,7 +12,7 @@ const LandingContent = () => {
         jewellery; laden with precious diamonds, sapphires and esmeralds in gold
         of an exceptional quality
       </p>
-      <button className={styles.landingContent_btn}>Shop now</button>
+      <Button text="Shop now" />
     </section>
   );
 };

@@ -1,0 +1,13 @@
+@import "mixins";
+@import "variables";
+
+.textarea {
+    border : 1px solid $dark-brown;
+    padding: 0.5rem;
+    width: 100%;
+}
+
+.textarea {
+    height: 100px;
+    outline: none;
+}

@@ -4,7 +4,7 @@ const Footer = () => {
   return (
     <footer className={styles.myFooter}>
       <p className={styles.myFooter_text}>
-        All Rights Reserved Cartier <i className="fa-solid fa-copyright"></i>
+        All Rights Reserved Cartier
       </p>
     </footer>
   );

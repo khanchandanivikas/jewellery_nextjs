@@ -3,8 +3,7 @@
 
 .productShippingList {
     list-style: none;
-    font-size: 0.8rem;
-    margin: 4rem 0 1rem;
+    margin-top: 3rem;
 
     &_item {
         margin: 1rem 0;
@@ -12,6 +11,7 @@
         svg {
             color: $dark-brown;
             margin-right: 1rem;
+            font-size: 0.9rem;
         }
     }
 }

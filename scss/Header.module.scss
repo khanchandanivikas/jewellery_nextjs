@@ -5,18 +5,19 @@
     @include flex-center(row, center, space-between);
     border-bottom: solid 2px $light-brown;
     z-index: 2;
-    padding-left: 1rem;
+    padding-left: 1.5rem;
 
     &_logo {
         max-width: 130px;
     }
 
     @include media-lg {
-        padding-left: 2rem;
+        padding-left: 5%;
     }
 
     &_cart_hamburger {
         @include flex-center(row, center, center);
+        z-index: 2;
 
         svg:nth-child(1) {
             color: $dark-brown;

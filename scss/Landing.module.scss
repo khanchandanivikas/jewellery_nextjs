@@ -2,11 +2,11 @@
 @import "variables";
 
 .landingContainer {
-    padding: 1rem;
+    padding: 1.5rem;
 
     @include media-lg {
         margin-right: 4rem;
-        padding: 2rem;
+        padding: 1.5rem 5%;
     }
 
     @include media-xl {

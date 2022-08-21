@@ -7,20 +7,11 @@
     }
 
     &_heading {
-        margin-top: 1rem;
-        margin-bottom: 0.5rem;
+        margin-bottom: 1rem;
     }
 
     &_info {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        grid-template-rows: 1fr 1fr;
-        font-size: 0.9rem;
-
-        &_text {
-            margin: 0.5rem 0;
-            font-weight: 400;
-            font-size: 0.9rem;
-        }
+        @include grid(1fr 1fr, auto, auto);
+        gap: 1rem;
     }
 }

@@ -1,12 +1,15 @@
 @import "mixins";
 @import "variables";
 
-.carousal {
+.carousal,
+.carousal_hidden {
     background-size: cover !important;
     background-repeat: no-repeat !important;
     background-position: center !important;
     height: 30vh;
     margin: 2rem 0;
+    opacity: 1;
+    transition: opacity 1s ease;
 
     @include media-lg {
         height: 40vh;
@@ -17,4 +20,10 @@
         height: 95vh;
         margin: 0;
     }
+}
+
+.carousal_hidden {
+    opacity: 0;
+    height: 0;
+    width: 0;
 }

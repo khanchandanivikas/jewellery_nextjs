@@ -3,11 +3,8 @@
 
 .productCarousal {
     @include flex-center(column, center, center);
+    margin-bottom: 2rem;
     position: relative;
-
-    &_image {
-        max-height: 400px;
-    }
 
     &_dots {
         position: absolute;

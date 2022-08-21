@@ -3,21 +3,20 @@
 
 .productInfo {
     margin: 2rem 0;
+    padding: 2rem 0;
     border-top: 1px solid $light-brown;
     border-bottom: 1px solid $light-brown;
 
     &_heading {
-        margin: 4rem 0 2rem;
+        margin: 1rem 0;
     }
 
     &_details {
         margin: 1rem 0;
-        font-size: 0.9rem;
     }
 
     &_list {
         list-style: none;
-        font-size: 0.9rem;
 
         &_item {
             margin: 1rem 0;
@@ -26,10 +25,6 @@
 
     &_list_material {
         list-style: none;
-        font-size: 14.4px;
-
-        &_item {
-            margin: 1rem 0 4rem;
-        }
+        margin: 1rem 0;
     }
 }

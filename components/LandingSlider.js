@@ -14,22 +14,37 @@ const LandingSlider = (props) => {
 
   return (
     <div className={styles.landingSlider}>
-      <div className={styles.landingSlider_content}>
-        <Image
-          src={images[index].src}
-          alt="slider_image"
-          width={200}
-          height={200}
-          className={styles.landingSlider_content_image}
-        />
-        <div className={styles.landingSlider_content_text}>
-          <h4>{index === 0 ? 1 : 2}</h4>
-          <h4 className={styles.heading}>
-            {index === 0 ? "Bright Side Collection" : "Dark Side Collection"}
-          </h4>
-          <FontAwesomeIcon icon={faArrowRight} />
-        </div>
-      </div>
+      {images.map((image, i) => {
+        return (
+          <div
+            key={image.title}
+            className={
+              i === index
+                ? styles.landingSlider_content
+                : styles.landingSlider_content_hidden
+            }
+          >
+            <Image
+              src={`/images/${image.name}`}
+              alt={image.title}
+              width={200}
+              height={200}
+            />
+
+            <div
+              className={
+                i === index
+                  ? styles.landingSlider_content_text
+                  : styles.landingSlider_content_text_hidden
+              }
+            >
+              <h4>{image.number}</h4>
+              <h4 className={styles.heading}>{image.title}</h4>
+              <FontAwesomeIcon icon={faArrowRight} />
+            </div>
+          </div>
+        );
+      })}
       <div className={styles.landingSlider_arrows}>
         <button onClick={handleClicknext}>
           <FontAwesomeIcon icon={faAngleUp} />

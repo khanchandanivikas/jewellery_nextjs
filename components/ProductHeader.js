@@ -4,12 +4,12 @@ import styles from "../scss/ProductHeader.module.scss";
 
 const ProductHeader = () => {
   return (
-    <div className={styles.product}>
+    <div>
       <h3>Croissant Dôme Hoops - $78</h3>
       <div className={styles.product_description}>
         <FontAwesomeIcon icon={faCircle} />
         <FontAwesomeIcon icon={faCircle} />
-        <p className={styles.products_description_text}>14k Yellow Gold</p>
+        <h5>14k Yellow Gold</h5>
       </div>
       <div className={styles.product_rating}>
         <FontAwesomeIcon icon={faStar} />

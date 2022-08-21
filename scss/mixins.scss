@@ -7,6 +7,14 @@
     justify-content: $flex-justify;
 }
 
+@mixin grid($gridTemplateCol, $grid-align, $grid-justify) {
+    display: grid;
+    grid-template-columns: $gridTemplateCol;
+    align-items: $grid-align;
+    justify-content: $grid-justify;
+    gap: 2rem;
+}
+
 @mixin background-image ($url) {
     background-image: url($url);
     background-size: cover;
@@ -15,7 +23,7 @@
 }
 
 @mixin transition {
-    transition: all 0.2s ease;
+    transition: all 0.3s ease;
 }
 
 @mixin media-sm {
@@ -24,33 +32,18 @@
     }
 }
 
-// @mixin media-md {
-//     @media only screen and (min-width: 482px) and (max-width: 768px) {
-//         @content;
-//     }
-// }
 @mixin media-md {
     @media only screen and (min-width: 482px) {
         @content;
     }
 }
 
-// @mixin media-lg {
-//     @media only screen and (min-width: 769px) and (max-width: 1024px) {
-//         @content;
-//     }
-// }
 @mixin media-lg {
     @media only screen and (min-width: 769px) {
         @content;
     }
 }
 
-// @mixin media-xl {
-//     @media only screen and (min-width: 1025px) {
-//         @content;
-//     }
-// }
 @mixin media-xl {
     @media only screen and (min-width: 1025px) {
         @content;

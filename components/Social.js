@@ -1,26 +1,41 @@
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faFacebook,
+  faInstagram,
+  faTwitter,
+} from "@fortawesome/free-brands-svg-icons";
+import Link from "next/link";
 import styles from "../scss/Social.module.scss";
 
-const Social = () => {
+const Social = ({ flexCol }) => {
   return (
-    <div className={styles.socialIcons}>
-      <ul className={styles.socialIcons_list}>
-        <li className={styles.socialIcons_list_link}>
-          <a href="facebook.com">
-            <i className="fa-brands fa-facebook-f"></i>
-          </a>
-        </li>
-        <li className={styles.socialIcons_list_link}>
-          <a href="instagram.com">
-            <i className="fa-brands fa-instagram"></i>
-          </a>
-        </li>
-        <li className={styles.socialIcons_list_link}>
-          <a href="twitter.com">
-            <i className="fa-brands fa-twitter"></i>
-          </a>
-        </li>
+    // <div
+    //   className={
+    //     !flexCol ? styles.socialIcons : `${styles.socialIcons} ${styles.flexCol}`
+    //   }
+    // >
+      <ul
+        className={
+          !flexCol ? styles.socialIcons : `${styles.socialIcons} ${styles.flexCol}`
+        }
+      >
+        <Link href="www.facebook.com">
+          <li className={styles.socialIcons_link}>
+            <FontAwesomeIcon icon={faFacebook} />
+          </li>
+        </Link>
+        <Link href="instagram.com">
+          <li className={styles.socialIcons_link}>
+            <FontAwesomeIcon icon={faInstagram} />
+          </li>
+        </Link>
+        <Link href="twitter.com">
+          <li className={styles.socialIcons_link}>
+            <FontAwesomeIcon icon={faTwitter} />
+          </li>
+        </Link>
       </ul>
-    </div>
+    //  </div>
   );
 };
 
