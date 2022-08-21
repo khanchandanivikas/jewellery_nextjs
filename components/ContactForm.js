@@ -1,6 +1,5 @@
-import React, { useEffect, useState, useCallback } from "react";
+import React, { useState, useCallback } from "react";
 import { useGoogleReCaptcha } from "react-google-recaptcha-v3";
-import { useRouter } from "next/router";
 import axios from "axios";
 import styles from "../scss/Form.module.scss";
 import Input from "../components/Input";
@@ -10,7 +9,6 @@ import Loader from "../components/Loader";
 import toast, { Toaster } from "react-hot-toast";
 
 const ContactForm = () => {
-  const router = useRouter();
   const [isLoading, setIsLoading] = useState(false);
   const { executeRecaptcha } = useGoogleReCaptcha();
 
@@ -30,7 +28,6 @@ const ContactForm = () => {
         [e.target.name]: e.target.value,
       };
     });
-    console.log(state);
   };
 
   const handleSubmit = async (e) => {
@@ -44,7 +41,6 @@ const ContactForm = () => {
           token,
         });
         setIsLoading(false);
-        console.log(data);
         if (data.status === "success") {
           setState({
             name: "",
@@ -73,10 +69,9 @@ const ContactForm = () => {
     if (executeRecaptcha) {
       return await executeRecaptcha();
     } else {
-      return;
+      return null;
     }
   }, [executeRecaptcha]);
-  useEffect(() => handleReCaptchaVerify, [handleReCaptchaVerify]);
 
   return (
     <div>

@@ -2,10 +2,11 @@
 @import "variables";
 
 .sidebar {
-    
+
     @include media-lg {
         @include flex-center(column, center, space-between);
         min-height: 100vh;
+        width: 3.5rem;
         position: fixed;
         top: 0;
         left: calc(100vw - 3.5rem);
@@ -15,5 +16,6 @@
 
     @include media-xl {
         left: calc(100vw - 4.5rem);
+        width: 4.5rem;
     }
 }

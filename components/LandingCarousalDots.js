@@ -17,7 +17,6 @@ const LandingCarousalDots = ({ images, index, setIndex }) => {
         </button>
       );
     }
-    console.log(res);
     return res;
   };
 

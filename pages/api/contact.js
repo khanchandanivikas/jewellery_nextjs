@@ -46,9 +46,6 @@ const sendConfirmationEmail = (body, res) => {
                     <body style='font-family: Roboto'>
                         <div style='width:80%;margin:auto;margin-top:40px;padding:20px 40px;border-color:lightgray;border-width:0 1px;border-style:solid'>
                             <h1 style='text-align:center;color:rgb(129,23,19)'>Jewellery</h1>
-                            <div style='margin:auto;text-align:center'>
-                                <img src='cid:img' style='height:200px;'/>
-                            </div>
                             <h2 style='text-align:center;color:rgb(70,70,96)'>We have received your e-mail correctly.</h2>
                             <br>
                             <p style='color:rgb(70,70,96)'>We will get in touch with you as soon as possible.</p>
@@ -85,7 +82,6 @@ const sendConfirmationEmail = (body, res) => {
 };
 
 const sendEmail = (body, res) => {
-  console.log(body);
   const transporter = nodemailer.createTransport(transport);
   transporter.verify(function (err, success) {
     if (!err) {
@@ -113,11 +109,11 @@ const sendEmail = (body, res) => {
                               <h2 style='text-align:center;color:rgb(70,70,96)'>Message received through contact form.</h2>
                               <br>
                               <p style='color:rgb(70,70,96)'>Nombre: <b>${body.name}</b></p>                       
-                              <p style='color:rgb(70,70,96)'>Telefono: <b>${body.email}</b></p>
-                              <p style='color:rgb(70,70,96)'>Nombre: <b>${body.telephone}</b></p>                       
-                              <p style='color:rgb(70,70,96)'>Telefono: <b>${body.purpose}</b></p>
-                              <p style='color:rgb(70,70,96)'>Nombre: <b>${body.subject}</b></p>                       
-                              <p style='color:rgb(70,70,96)'>Telefono: <b>${body.message}</b></p>
+                              <p style='color:rgb(70,70,96)'>E-mail: <b>${body.email}</b></p>
+                              <p style='color:rgb(70,70,96)'>Telephone: <b>${body.telephone}</b></p>                       
+                              <p style='color:rgb(70,70,96)'>Motive: <b>${body.purpose}</b></p>
+                              <p style='color:rgb(70,70,96)'>Subject: <b>${body.subject}</b></p>                       
+                              <p style='color:rgb(70,70,96)'>Message: <b>${body.message}</b></p>
                               <br>
                               <div style='margin:auto;text-align:right'>
                                   <img src='cid:logo' style='width:150px;'/>

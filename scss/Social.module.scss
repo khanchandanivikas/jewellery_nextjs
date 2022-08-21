@@ -6,7 +6,7 @@
     @include flex-center(row, center, flex-start);
 
     &_link {
-        margin-right: 10px;
+        margin: 5px;
     }
 
     svg {
@@ -16,5 +16,10 @@
 }
 
 .flexCol {
-    flex-direction: column;
+    flex-direction: row;
+    justify-content: center;
+
+    @include media-lg {
+        flex-direction: column;
+    }
 }
