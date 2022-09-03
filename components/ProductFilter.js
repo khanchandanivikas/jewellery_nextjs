@@ -1,17 +1,27 @@
 import styles from "../scss/ProductFilter.module.scss";
 
-const ProductFilter = () => {
+const ProductFilter = ({ setSort, handleFilters }) => {
   return (
     <div className={styles.filterBox}>
       <h2>Necklaces</h2>
       <div className={styles.filterBox_dropdowns}>
-        <select name="" id="" className={styles.filterBox_dropdowns_filter}>
-          <option value="">Filter</option>
-          <option value="">filter2</option>
+        <select
+          name="color"
+          onChange={handleFilters}
+          className={styles.filterBox_dropdowns_filter}
+        >
+          <option disabled>Color</option>
+          <option value="">all</option>
+          <option>gold</option>
+          <option>silver</option>
         </select>
-        <select name="" id="" className={styles.filterBox_dropdowns_sort}>
-          <option value="">Sort</option>
-          <option value="">filter2</option>
+        <select
+          onChange={(e) => setSort(e.target.value)}
+          className={styles.filterBox_dropdowns_sort}
+        >
+          <option value="newest">Newest</option>
+          <option value="asc">Price (asc)</option>
+          <option value="desc">Price (desc)</option>
         </select>
       </div>
     </div>

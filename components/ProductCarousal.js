@@ -1,24 +1,21 @@
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faCircle
-} from "@fortawesome/free-solid-svg-icons";
 import Image from "next/image";
 import styles from "../scss/ProductCarousal.module.scss";
 import ProductImage from "../images/product-image.jpg";
+import LandingCarousalDots from "../components/LandingCarousalDots";
+import { useState } from "react";
+import LandingCarousal from "../components/LandingCarousal";
 
-const ProductCarousal = () => {
+const ProductCarousal = ({ product }) => {
+  const [index, setIndex] = useState(0);
   return (
     <div className={styles.productCarousal}>
-      <Image
-        src={ProductImage.src}
-        width={768}
-        height={768}
-        alt="product_image"
-      />
+      <LandingCarousal images={product.images} index={index} url="products" />
       <div className={styles.productCarousal_dots}>
-        <FontAwesomeIcon icon={faCircle} />
-        <FontAwesomeIcon icon={faCircle} />
-        <FontAwesomeIcon icon={faCircle} />
+        <LandingCarousalDots
+          images={product.images}
+          index={index}
+          setIndex={setIndex}
+        />
       </div>
     </div>
   );

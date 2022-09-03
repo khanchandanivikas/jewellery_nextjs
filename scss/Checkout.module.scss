@@ -1,0 +1,47 @@
+@import "mixins";
+@import "variables";
+
+.carts {
+    padding: 1.5rem;
+
+    .cartTable {
+        width: 100%;
+
+        .cartItem {
+            @include grid(1fr 1fr, center, center);
+            gap: 1rem;
+            margin-bottom: 2rem;
+
+            .cartTitle {
+                @include flex-center(row, center, flex-start);
+                color: $text-color;
+            }
+
+            .cartItemControl {
+                @include flex-center(row, center, space-between);
+                gap: 1rem;
+                color: $text-color;
+                font-weight: 600;
+
+                button {
+                    background-color: $dark-brown;
+                    color: $white;
+                    padding: 10px;
+                }
+            }
+
+            .cartItemTotal {
+                color: $text-color;
+                text-align: end;
+            }
+
+            @include media-md {
+                grid-template-columns: 1fr 1.2fr 0.3fr 0.5fr;
+            }
+        }
+    }
+
+    @include media-md {
+        padding: 1.5rem 5%;
+    }
+}

@@ -9,6 +9,7 @@
 
     &_logo {
         max-width: 130px;
+        cursor: pointer;
     }
 
     @include media-lg {
@@ -19,16 +20,18 @@
         @include flex-center(row, center, center);
         z-index: 2;
 
-        svg:nth-child(1) {
+        svg:nth-child(1), svg:nth-child(2) {
             color: $dark-brown;
-            margin-right: 10px;
+            margin-right: 20px;
+            cursor: pointer;
         }
 
-        svg:nth-child(2) {
+        svg:nth-child(3) {
             color: $light-brown;
             padding: 20px;
             background-color: $dark-brown;
             border-left: solid 1px $light-brown;
+            cursor: pointer;
         }
     }
 }
