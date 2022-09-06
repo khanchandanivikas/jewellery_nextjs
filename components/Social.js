@@ -10,24 +10,20 @@ import styles from "../scss/Social.module.scss";
 const Social = ({ flexCol }) => {
   return (
     <ul
-      className={
-        !flexCol
-          ? styles.socialIcons
-          : `${styles.socialIcons} ${styles.flexCol}`
-      }
+      className={styles.socialIcons}
     >
       <Link href="www.facebook.com">
-        <li className={styles.socialIcons_link}>
+        <li>
           <FontAwesomeIcon icon={faFacebook} />
         </li>
       </Link>
       <Link href="instagram.com">
-        <li className={styles.socialIcons_link}>
+        <li>
           <FontAwesomeIcon icon={faInstagram} />
         </li>
       </Link>
       <Link href="twitter.com">
-        <li className={styles.socialIcons_link}>
+        <li>
           <FontAwesomeIcon icon={faTwitter} />
         </li>
       </Link>

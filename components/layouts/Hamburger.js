@@ -35,12 +35,6 @@ const Hamburger = (props) => {
         >
           <Link href="/contact">CONTACT</Link>
         </li>
-        <li
-          onClick={toggleHamburger}
-          className={styles.hamburgerMenu_list_link}
-        >
-          <Link href="/product">CATEGORIES</Link>
-        </li>
       </ul>
     </div>
   );

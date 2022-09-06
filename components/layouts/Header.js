@@ -21,11 +21,15 @@ const Header = (props) => {
       </Link>
       <div className={styles.myHeader_cart_hamburger}>
         <Link href="/login">
-          <>
+          <a>
             <FontAwesomeIcon icon={faUser} />
-          </>
+          </a>
         </Link>
-        <FontAwesomeIcon icon={faBasketShopping} />
+        <Link href="/checkout">
+          <a>
+            <FontAwesomeIcon icon={faBasketShopping} />
+          </a>
+        </Link>
         <FontAwesomeIcon onClick={toggleHamburger} icon={faBars} />
       </div>
     </header>

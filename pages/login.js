@@ -1,6 +1,7 @@
 import styles from "../scss/Login.module.scss";
 import LoginForm from "../components/LoginForm";
 import RegisterForm from "../components/RegisterForm";
+import FacebookLogin from "../components/FacebookLogin";
 
 const Login = () => {
   return (
@@ -8,19 +9,13 @@ const Login = () => {
       <div className={styles.formContainer}>
         <h2>Login to your account</h2>
         <p>Welcome again! Continue with your account.</p>
-        <div>
-          <p>Continue with google</p>
-          <p>Or</p>
-        </div>
+        <FacebookLogin />
         <LoginForm />
       </div>
       <div className={styles.formContainer}>
         <h2>Register</h2>
         <p>Create a new account today</p>
-        <div>
-          <p>Continue with google</p>
-          <p>Or</p>
-        </div>
+        <FacebookLogin />
         <RegisterForm />
       </div>
     </div>

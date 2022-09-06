@@ -11,6 +11,7 @@ const LandingSlider = (props) => {
   const images = props.images;
   const index = props.index;
   const handleClicknext = props.handleClicknext;
+  const handleClickprev = props.handleClickprev;
 
   return (
     <div className={styles.landingSlider}>
@@ -46,7 +47,7 @@ const LandingSlider = (props) => {
         );
       })}
       <div className={styles.landingSlider_arrows}>
-        <button onClick={handleClicknext}>
+        <button onClick={handleClickprev}>
           <FontAwesomeIcon icon={faAngleUp} />
         </button>
         <button onClick={handleClicknext}>

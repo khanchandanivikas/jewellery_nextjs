@@ -1,29 +1,31 @@
 @import "mixins";
 @import "variables";
 
-
 .landingCarousal_dots {
     @include flex-center(row, center, center);
-    display: none;
+    gap: 1rem;
+    margin-bottom: 1rem;
 
-    .dotActive, .dotInactive {
-        margin: 0.5rem 0.4rem;
-        @include transition;
+    .dotActive,
+    .dotInactive {
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
     }
 
     .dotActive {
-        color: $dark-brown;
-        border-radius: 50%;
         border: solid 1px transparent;
+
+        svg {
+            color: $dark-brown;
+        }
     }
 
     .dotInactive {
-        color: transparent;
         border: solid 1px $dark-brown;
-        border-radius: 50%;
-    }
 
-    @include media-lg {
-        @include flex-center(column, center, center);
+        svg {
+            color: transparent;
+        }
     }
 }

@@ -1,17 +1,14 @@
 import styles from "../scss/LandingCarousal.module.scss";
 
-const LandingCarousal = (props) => {
-  const images = props.images;
-  const index = props.index;
-
+const LandingCarousal = ({ images, index, url }) => {
   return (
     <div>
       {images.map((image, i) => {
         return (
           <div
-            key={image.title}
+            key={image.name}
             style={{
-              background: `url(/images/${image.name})`,
+              background: `url(/images${url ? "/" + url : ""}/${image.name})`,
             }}
             className={i === index ? styles.carousal : styles.carousal_hidden}
           ></div>

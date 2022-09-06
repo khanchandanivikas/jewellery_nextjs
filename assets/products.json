@@ -1,0 +1,41 @@
+[{
+        "id": "price_1LPnZ4AXOebqfAROWLQC7qMj",
+        "name": "rolex 123",
+        "description": "Looking like a French girl isnt as difficile as it seems. Handcrafted in vermeil, a thick 18k gold layer on sterling silver. Consider this croissan inspired hoops to make all your Parisian dreams come true.",
+        "details": ["Made in gold vermeil: a thick 18k gold layer on sterling silver.", "Diameter: 17.15 mm.", "Width: 3.8 - 6.0 mm."],
+        "materials": ["Gold Vermeil"],
+        "category": "watch",
+        "color": "gold",
+        "price": 3995,
+        "currency": "EUR",
+        "images": [{
+            "name": "rolex1.jpg"
+        }, {
+            "name": "rolex2.jpg"
+        }],
+        "rating": {
+            "count": 85,
+            "rate": 4.5
+        }
+    },
+    {
+        "id": "price_1LPnZ4AXOebqfAROWLQC7qMk",
+        "name": "sefora 1234",
+        "description": "Looking like a French girl isnt as difficile as it seems. Handcrafted in vermeil, a thick 18k gold layer on sterling silver. Consider this croissan inspired hoops to make all your Parisian dreams come true.",
+        "details": ["Made in silver vermeil: a thick 18k gold layer on sterling silver.", "Diameter: 17.15 mm.", "Width: 3.8 - 6.0 mm."],
+        "materials": ["Silver Vermeil"],
+        "category": "necklace",
+        "color": "silver",
+        "price": 5995,
+        "currency": "EUR",
+        "images": [{
+            "name": "necklace1.jpg"
+        }, {
+            "name": "necklace2.jpg"
+        }],
+        "rating": {
+            "count": 85,
+            "rate": 4.5
+        }
+    }
+]

@@ -1,0 +1,22 @@
+@import "mixins";
+@import "variables";
+
+.cartItem {
+    @include grid(1fr 1fr, center, center);
+    gap: 1rem;
+    margin-bottom: 2rem;
+
+    .cartTitle {
+        @include flex-center(row, center, flex-start);
+        color: $text-color;
+    }
+
+    .cartItemTotal {
+        color: $text-color;
+        text-align: end;
+    }
+
+    @include media-md {
+        grid-template-columns: 0.5fr 1fr 0.3fr 0.3fr;
+    }
+}

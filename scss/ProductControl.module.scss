@@ -1,0 +1,15 @@
+@import "mixins";
+@import "variables";
+
+.cartItemControl {
+    @include flex-center(row, center, flex-start);
+    gap: 1rem;
+    color: $text-color;
+    font-weight: 600;
+
+    button {
+        background-color: $dark-brown;
+        color: $white;
+        padding: 10px;
+    }
+}

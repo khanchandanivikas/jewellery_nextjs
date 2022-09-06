@@ -8,26 +8,12 @@ const initialState = {
 const cartReducer = (state = initialState, action) => {
   switch (action.type) {
     case actionTypes.INCREASE_QUANTITY:
-      state.numberCart++;
-      let productExist = state.carts.find(
-        (item) => item.id === action.payload.id
-      );
-      if (productExist) {
-        [
-          ...state.carts,
-          state.carts.map((item) => {
-            item.id === action.payload.id
-              ? { ...productExist, quantity: productExist.quantity + 1 }
-              : item;
-          }),
-        ];
-        productExist.quantity += 1;
-      } else {
-        [state.carts.push({ ...action.payload, quantity: 1 })];
-      }
-      return {
-        ...state,
-      };
+      state.carts = state.carts.map((item) => {
+        if (item.id === action.payload.id) {
+          return { ...item, amount: item.amount + 1 };
+        }
+        return item;
+      });
 
     case actionTypes.DECREASE_QUANTITY:
       state.numberCart--;

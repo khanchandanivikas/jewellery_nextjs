@@ -7,11 +7,12 @@
 
     &_details {
         @include grid(3fr 1fr, auto, auto);
-        grid-template-rows: 1fr 1fr;
+        grid-template-rows: 0.8fr 1fr;
         gap: 0;
 
         a {
             font-weight: 600;
+            color: $dark-brown;
         }
 
         &_price {

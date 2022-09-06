@@ -2,19 +2,19 @@
 @import "variables";
 
 .forms {
-    padding: 1.5rem;
     margin-bottom: 1.5rem;
     @include grid(1fr, space-between, space-between);
+    height: 100vh;
 
     .formContainer {
-        padding: 1.5rem;
+        padding: 3rem 1.5rem;
     }
 
     .formContainer:nth-child(1) {
         background-color: $light-brown;
 
         @include media-lg {
-          padding: 1.5rem 1.5rem 0 11%;
+          padding: 3rem 1.5rem 3rem 11%;
         }
     }
 
