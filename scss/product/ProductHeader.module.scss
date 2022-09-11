@@ -1,9 +1,16 @@
-@import "mixins";
-@import "variables";
+@import "../mixins";
+@import "../variables";
 
-.product {
-    &_description {
-        margin: 1rem 0;
+.productHeaderContainer {
+    @include flex-center(column, space-between, flex-start);
+    gap: 1.5rem;
+
+    .name {
+        color: $dark-brown;
+        text-transform: uppercase;
+    }
+
+    .description {
         @include flex-center(row, center, flex-start);
 
         svg:nth-child(1) {
@@ -22,19 +29,11 @@
         }
     }
 
-    &_rating {
+    .rating {
         color: $dark-brown;
-        margin-bottom: 1rem;
 
         svg {
             margin-right: 10px;
         }
-    }
-
-    &_addToCart_btn {
-        border: solid 1px $dark-brown;
-        padding: 0.5rem 1rem;
-        background-color: #fff;
-        margin: 1rem 0;
     }
 }

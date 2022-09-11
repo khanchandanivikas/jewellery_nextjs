@@ -4,5 +4,7 @@
 .btn {
     border: solid 1px $dark-brown;
     color: $dark-brown;
-    padding: 0.5rem 1rem;
+    padding: 0.8rem 1.1rem;
+    min-width: 100px;
+    max-width: max-content;
 }

@@ -3,13 +3,13 @@
 
 .carts {
     padding: 1.5rem;
-    min-height: 90vh;
+    min-height: 80vh;
 
     .cartTable {
         width: 100%;
     }
 
     @include media-md {
-        padding: 1.5rem 5%;
+        padding: 3rem 5%;
     }
 }

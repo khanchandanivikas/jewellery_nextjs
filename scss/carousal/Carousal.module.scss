@@ -1,0 +1,24 @@
+@import "../mixins";
+@import "../variables";
+
+.carousal,
+.carousal_hidden {
+    @include background-image;
+    height: 30vh;
+    @include transition(opacity);
+
+    @include media-lg {
+        height: 40vh;
+    }
+
+    @include media-xl {
+        height: 88vh;
+        margin: 0;
+    }
+}
+
+.carousal_hidden {
+    opacity: 0;
+    height: 0;
+    width: 0;
+}

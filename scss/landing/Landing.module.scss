@@ -1,0 +1,17 @@
+@import "../mixins";
+@import "../variables";
+
+// container
+.landingContainer {
+    @include grid(1fr);
+    padding: 1.5rem;
+
+    @include media-lg {
+        padding: 3rem 5%;
+    }
+
+    @include media-xl {
+        @include grid(1fr 1fr);
+        grid-template-rows: 45vh 30vh;
+    }
+}

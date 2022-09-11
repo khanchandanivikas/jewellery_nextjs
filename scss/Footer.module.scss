@@ -2,11 +2,8 @@
 @import "variables";
 
 .myFooter {
-   @include flex-center(row, center, center);
-
-   &_text {
-       font-size: 0.9rem;
-       font-weight: 500;
-       padding-bottom: 1.5rem;
-   }
+    padding: 1.5rem;
+    p {
+        text-align: center !important;
+    }
 }

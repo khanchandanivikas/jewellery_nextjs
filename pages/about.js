@@ -1,7 +1,7 @@
-import styles from "../scss/About.module.scss";
+import styles from "../scss/about/About.module.scss";
 import AboutMission from '../components/AboutMission';
 import AboutCeo from '../components/AboutCeo';
-import AboutSocial from '../components/AboutSocial';
+import Social from '../components/Social';
 import AboutCover from '../components/AboutCover';
 
 const About = () => {
@@ -10,7 +10,7 @@ const About = () => {
         <AboutMission />
         <AboutCeo />
         <AboutCover />
-        <AboutSocial />
+        <Social />
     </div>
   )
 }

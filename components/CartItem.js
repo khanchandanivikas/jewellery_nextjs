@@ -2,7 +2,7 @@ import Image from "next/image";
 import styles from "../scss/CartItem.module.scss";
 import ProductControl from "./ProductControl";
 
-const CartItem = () => {
+const CartItem = ({ cart }) => {
   return (
     <tr className={styles.cartItem}>
       <td className={styles.cartTitle}>
@@ -12,13 +12,13 @@ const CartItem = () => {
           width={50}
           height={50}
         />
-        Rolex
+        {cart.name}
       </td>
-      <td className={styles.cartDescription}>Bonito rgfn re</td>
+      <td className={styles.cartDescription}>{cart.name}</td>
       <td>
-        <ProductControl />
+        <ProductControl product={cart} />
       </td>
-      <td className={styles.cartItemTotal}>25 €</td>
+      <td className={styles.cartItemTotal}>{cart.price * cart.quantity} €</td>
     </tr>
   );
 };

@@ -1,5 +1,5 @@
-@import "mixins";
-@import "variables";
+@import "../mixins";
+@import "../variables";
 
 .landingCarousal_dots {
     @include flex-center(row, center, center);

@@ -1,35 +1,33 @@
 @import "mixins";
 @import "variables";
 
+// container
 .shopLanding {
-    @include grid(1fr 1fr, auto, auto);
-    gap: 0;
+    @include grid(1fr 1fr);
     grid-template-rows: 1fr 1fr;
+    gap: 0;
 
-    @include media-lg {
-        grid-template-columns: 0.5fr 0.5fr 1fr;
-        grid-template-rows: auto;
-    }
-
+    // text
     &_content {
         grid-column: 1/-1;
-        @include flex-center(column, center, center);
+        @include flex(column);
+        justify-content: center;
+        padding: 1.5rem;
         background-color: $light-brown;
 
         @include media-lg {
             grid-column: auto;
-        }
-
-        &_text {
-            font-weight: 400;
-            font-size: 0.9rem;
-            margin: 1rem 0;
+            padding: 3rem;
         }
 
         button {
-            border: solid 1px $dark-brown;
-            padding: 0.5rem 1rem;
             background-color: #fff;
         }
+    }
+
+    @include media-lg {
+        @include grid(0.5fr 0.5fr 1fr);
+        grid-template-rows: auto;
+        gap: 0;
     }
 }

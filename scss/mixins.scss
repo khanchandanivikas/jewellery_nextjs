@@ -1,29 +1,25 @@
 @import "variables";
 
-@mixin flex-center($flex-direction, $flex-align, $flex-justify) {
+@mixin flex ($flex-direction) {
     display: flex;
     flex-direction: $flex-direction;
-    align-items: $flex-align;
-    justify-content: $flex-justify;
+    gap: 1.5rem;
 }
 
-@mixin grid($gridTemplateCol, $grid-align, $grid-justify) {
+@mixin grid ($gridTemplateCol) {
     display: grid;
     grid-template-columns: $gridTemplateCol;
-    align-items: $grid-align;
-    justify-content: $grid-justify;
-    gap: 2rem;
+    gap: 3rem;
 }
 
-@mixin background-image ($url) {
-    background-image: url($url);
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
+@mixin background-image () {
+    background-size: cover !important;
+    background-repeat: no-repeat !important;
+    background-position: center !important;
 }
 
-@mixin transition {
-    transition: all 0.3s ease;
+@mixin transition ($name) {
+    transition: $name 0.5s ease;
 }
 
 @mixin media-sm {

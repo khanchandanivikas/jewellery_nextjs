@@ -6,7 +6,7 @@ import Button from "../components/Button";
 
 const ShopLanding = () => {
   return (
-    <div className={styles.shopLanding}>
+    <section className={styles.shopLanding}>
       <Image
         src={landingImage1}
         width={400}
@@ -26,7 +26,7 @@ const ShopLanding = () => {
         </p>
         <Button text="Shop best sellers" />
       </div>
-    </div>
+    </section>
   );
 };
 

@@ -33,11 +33,11 @@ const ProductList = ({ filters, sort }) => {
   }, [sort]);
 
   return (
-    <div className={styles.products}>
+    <section className={styles.products}>
       {filteredProducts.map((product) => {
         return <ProductCard key={product.id} product={product} />;
       })}
-    </div>
+    </section>
   );
 };
 

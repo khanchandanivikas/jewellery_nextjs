@@ -1,0 +1,58 @@
+@import "../mixins";
+@import "../variables";
+
+// container
+.landingSlider {
+    @include grid(1fr);
+
+    // text + image
+    .content {
+        @include flex(row);
+        background-color: $light-brown;
+        padding: 1rem;
+        @include transition(opacity);
+
+        // text
+        .text {
+            @include flex(column);
+            justify-content: center;
+            align-items: flex-start;
+
+            .heading {
+                font-size: 1.2rem;
+            }
+        }
+    }
+
+    .content_hidden {
+        opacity: 0;
+        position: absolute;
+    }
+
+    // controls
+    .arrows {
+        @include flex(row);
+        justify-content: flex-end;
+
+        @include media-lg {
+            @include flex(column);
+            justify-content: space-between;
+            align-items: flex-end;
+        }
+
+        button svg {
+            border: solid 1px $light-brown;
+            border-radius: 50%;
+            padding: 0.9rem 1rem;
+            color: $light-brown;
+        }
+    }
+
+    @include media-lg {
+        grid-template-columns: 60% 1fr;
+    }
+
+    @include media-xl {
+        grid-template-columns: 75% 1fr;
+    }
+}

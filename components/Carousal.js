@@ -1,6 +1,6 @@
-import styles from "../scss/LandingCarousal.module.scss";
+import styles from "../scss/carousal/Carousal.module.scss";
 
-const LandingCarousal = ({ images, index, url }) => {
+const Carousal = ({ images, index, url }) => {
   return (
     <div>
       {images.map((image, i) => {
@@ -18,4 +18,4 @@ const LandingCarousal = ({ images, index, url }) => {
   );
 };
 
-export default LandingCarousal;
+export default Carousal;

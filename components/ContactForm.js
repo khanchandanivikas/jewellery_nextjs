@@ -74,7 +74,7 @@ const ContactForm = () => {
   }, [executeRecaptcha]);
 
   return (
-    <div>
+    <section>
       <h2>Get in touch</h2>
       <form onSubmit={handleSubmit} method="post" className={styles.form}>
         <Input
@@ -122,7 +122,7 @@ const ContactForm = () => {
         <Button type="submit" text={isLoading ? <Loader /> : "Send"} />
       </form>
       <Toaster />
-    </div>
+    </section>
   );
 };
 

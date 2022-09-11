@@ -1,9 +1,8 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCircle } from "@fortawesome/free-solid-svg-icons";
-import styles from "../scss/LandingCarousalDots.module.scss";
-import { useEffect } from "react";
+import styles from "../scss/CarousalDots.module.scss";
 
-const LandingCarousalDots = ({ images, index, setIndex }) => {
+const CarousalDots = ({ images, index, setIndex }) => {
   const renderPagination = () => {
     let res = [];
     for (let i = 0; i <= images.length - 1; i++) {
@@ -25,4 +24,4 @@ const LandingCarousalDots = ({ images, index, setIndex }) => {
   );
 };
 
-export default LandingCarousalDots;
+export default CarousalDots;

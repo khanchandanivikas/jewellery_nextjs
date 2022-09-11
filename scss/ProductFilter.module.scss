@@ -2,8 +2,13 @@
 @import "variables";
 
 .filterBox {
-   @include flex-center(row, center, space-between);
-   padding: 1rem;
+   @include flex(row);
+   justify-content: space-between;
+   padding: 1.5rem;
+
+   @include media-lg {
+    padding: 3rem 5%;
+}
 
    &_dropdowns {
        &_filter, &_sort {

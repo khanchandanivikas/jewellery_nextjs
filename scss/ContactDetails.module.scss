@@ -2,16 +2,11 @@
 @import "variables";
 
 .contact {
-    @include media-xl {
-        @include flex-center(column, none, flex-end);
-    }
-
     &_heading {
-        margin-bottom: 1rem;
+        margin-bottom: 1.5rem;
     }
 
     &_info {
-        @include grid(1fr 1fr, auto, auto);
-        gap: 1rem;
+        @include grid(1fr 1fr);
     }
 }

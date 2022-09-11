@@ -1,7 +1,7 @@
-import { useState, useEffect } from "react";
-import styles from "../scss/Landing.module.scss";
+import { useState } from "react";
+import styles from "../scss/landing/Landing.module.scss";
 import LandingContent from "../components/LandingContent";
-import LandingCarousal from "../components/LandingCarousal";
+import Carousal from "../components/Carousal";
 import LandingSlider from "../components/LandingSlider";
 
 export default function Home() {
@@ -17,6 +17,7 @@ export default function Home() {
       title: "Dark Side Collection",
     },
   ];
+  
   const [index, setIndex] = useState(0);
 
   const handleClicknext = () => {
@@ -43,7 +44,7 @@ export default function Home() {
   return (
     <div className={styles.landingContainer}>
       <LandingContent />
-      <LandingCarousal images={images} index={index} />
+      <Carousal images={images} index={index} />
       <LandingSlider
         images={images}
         index={index}

@@ -7,7 +7,7 @@ import {
 import Link from "next/link";
 import styles from "../scss/Social.module.scss";
 
-const Social = ({ flexCol }) => {
+const Social = () => {
   return (
     <ul
       className={styles.socialIcons}

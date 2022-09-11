@@ -2,7 +2,8 @@
 @import "variables";
 
 .location {
-    @include background-image("../images/map.png");
+    background-image: url("../images/map.png");
+    @include background-image;
     min-height: 30vh;
 
     @include media-lg {

@@ -1,17 +1,16 @@
-@import "mixins";
-@import "variables";
+@import "../mixins";
+@import "../variables";
 
 .mission {    
     @include media-lg {
         grid-column: 1/-1;
-        width: 80%;
     }
 
     @include media-xl {
         grid-column: auto;
     }
 
-    &_text {
-        margin: 1rem 0;
+   .text {
+        margin-top: 2rem;
     }
 }

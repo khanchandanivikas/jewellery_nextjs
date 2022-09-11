@@ -1,15 +1,19 @@
 @import "mixins";
 @import "variables";
 
+// container
 .products_item {
-    @include flex-center(column, stretch, space-between);
+    @include flex(column);
+    justify-content: space-between;
     gap: 1rem;
 
+    // product details 
     &_details {
-        @include grid(3fr 1fr, auto, auto);
+        @include grid(3fr 1fr);
         grid-template-rows: 0.8fr 1fr;
         gap: 0;
 
+        // product name
         a {
             font-weight: 600;
             color: $dark-brown;

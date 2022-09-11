@@ -1,12 +1,13 @@
-@import "mixins";
-@import "variables";
+@import "../mixins";
+@import "../variables";
 
 .about {
     padding: 1.5rem;
+    min-height: 90vh;
 
     @include media-lg {
-        @include grid(1fr 1fr, none, none);
-        grid-template-rows: 0.5fr 1fr 1fr;
+        @include grid(1fr 1fr);
+        grid-template-rows: 0.3fr 1fr 1fr;
         padding: 1.5rem 5%;
     }
 

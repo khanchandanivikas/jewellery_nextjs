@@ -5,22 +5,22 @@ import ProductControl from "./ProductControl";
 
 const ProductHeader = ({ product }) => {
   return (
-    <div>
-      <h3>
+    <div className={styles.productHeaderContainer}>
+      <h3 className={styles.name}>
         {product.name} - {product.price}
       </h3>
-      <div className={styles.product_description}>
+      <div className={styles.description}>
         <FontAwesomeIcon icon={faCircle} />
         <FontAwesomeIcon icon={faCircle} />
         <h5>14k Yellow Gold</h5>
       </div>
-      <div className={styles.product_rating}>
+      <div className={styles.rating}>
         <FontAwesomeIcon icon={faStar} />
         <FontAwesomeIcon icon={faStar} />
         <FontAwesomeIcon icon={faStar} />
         <FontAwesomeIcon icon={faStar} />
       </div>
-      <ProductControl />
+      <ProductControl product={product} />
     </div>
   );
 };

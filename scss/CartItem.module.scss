@@ -2,13 +2,20 @@
 @import "variables";
 
 .cartItem {
-    @include grid(1fr 1fr, center, center);
-    gap: 1rem;
-    margin-bottom: 2rem;
+    @include grid(1fr 1fr);
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 3rem;
 
+    // image + product name
     .cartTitle {
-        @include flex-center(row, center, flex-start);
+        @include flex(row);
+        align-items: center;
         color: $text-color;
+    }
+
+    .cartDescription {
+        text-align: right;
     }
 
     .cartItemTotal {
@@ -17,6 +24,6 @@
     }
 
     @include media-md {
-        grid-template-columns: 0.5fr 1fr 0.3fr 0.3fr;
+        @include grid(0.5fr 1fr 0.3fr 0.3fr);
     }
 }

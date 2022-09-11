@@ -5,7 +5,7 @@ import {
   faAngleDown,
 } from "@fortawesome/free-solid-svg-icons";
 import Image from "next/image";
-import styles from "../scss/LandingSlider.module.scss";
+import styles from "../scss/landing/LandingSlider.module.scss";
 
 const LandingSlider = (props) => {
   const images = props.images;
@@ -19,11 +19,7 @@ const LandingSlider = (props) => {
         return (
           <div
             key={image.title}
-            className={
-              i === index
-                ? styles.landingSlider_content
-                : styles.landingSlider_content_hidden
-            }
+            className={i === index ? styles.content : styles.content_hidden}
           >
             <Image
               src={`/images/${image.name}`}
@@ -32,13 +28,7 @@ const LandingSlider = (props) => {
               height={200}
             />
 
-            <div
-              className={
-                i === index
-                  ? styles.landingSlider_content_text
-                  : styles.landingSlider_content_text_hidden
-              }
-            >
+            <div className={styles.text}>
               <h4>{image.number}</h4>
               <h4 className={styles.heading}>{image.title}</h4>
               <FontAwesomeIcon icon={faArrowRight} />
@@ -46,7 +36,7 @@ const LandingSlider = (props) => {
           </div>
         );
       })}
-      <div className={styles.landingSlider_arrows}>
+      <div className={styles.arrows}>
         <button onClick={handleClickprev}>
           <FontAwesomeIcon icon={faAngleUp} />
         </button>

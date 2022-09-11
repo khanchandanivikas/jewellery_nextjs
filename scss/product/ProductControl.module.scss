@@ -1,9 +1,9 @@
-@import "mixins";
-@import "variables";
+@import "../mixins";
+@import "../variables";
 
 .cartItemControl {
-    @include flex-center(row, center, flex-start);
-    gap: 1rem;
+    @include flex(row);
+    align-items: center;
     color: $text-color;
     font-weight: 600;
 

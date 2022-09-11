@@ -2,11 +2,11 @@
 @import "variables";
 
 .contactContainer {
-    @include grid(1fr, auto, auto);
+    @include grid(1fr);
     padding: 1.5rem;
 
     @include media-lg {
-        grid-template-columns: 1fr 1fr;
-        padding: 1.5rem 5%;
+        @include grid(1fr 1fr);
+        padding: 3rem 5%;
     }
 }

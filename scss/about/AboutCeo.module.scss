@@ -1,0 +1,28 @@
+@import "../mixins";
+@import "../variables";
+
+.ceo {
+    @include grid(1fr);
+    grid-column: 1/-1;
+    margin: 3rem 0;
+
+    .content {
+        .name {
+            margin-top: 2rem;
+        }
+
+        @include media-lg {
+            @include flex(column);
+            justify-content: space-between;
+        }
+    }
+
+    @include media-lg {
+        @include grid(1fr 1fr);
+        margin: 0;
+    }
+
+    @include media-xl {
+        grid-column: auto;
+    }
+}
