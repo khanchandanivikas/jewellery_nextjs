@@ -1,8 +1,8 @@
 import axios from "axios";
 import { loadStripe } from "@stripe/stripe-js";
-import { useSelector } from "react-redux";
+import { clearCart } from "../store/reducers/cartReducers";
+import { useDispatch, useSelector } from "react-redux";
 import { useRouter } from "next/router";
-import toast, { Toaster } from "react-hot-toast";
 import Swal from "sweetalert2";
 import styles from "../scss/Checkout.module.scss";
 import CartItem from "../components/CartItem";
@@ -14,6 +14,7 @@ const stripePromise = loadStripe(
 
 const Checkout = () => {
   const router = useRouter();
+  const dispatch = useDispatch();
   const cartList = useSelector((state) => state.cartReducer.cart);
   const user = useSelector((state) => state.authReducer.currentUser);
 
@@ -33,10 +34,11 @@ const Checkout = () => {
     }
   };
 
-  const finalizeCheckout = () => {
+  const finalizeCheckout = async () => {
     if (cartList.length > 0) {
       if (user.token) {
-        createCheckOutSession();
+        await createCheckOutSession();
+        dispatch(clearCart());
       } else {
         Swal.fire({
           icon: "error",
@@ -65,10 +67,15 @@ const Checkout = () => {
         </tbody>
       </table>
       {cartList.length < 1 && <p>No Items in cart</p>}
-      <Button
-        text={cartList.length > 0 ? "Checkout" : "Continue shopping"}
-        onClick={finalizeCheckout}
-      />
+      <div className={styles.cartOptions}>
+        <Button
+          text={cartList.length > 0 ? "Checkout" : "Continue shopping"}
+          onClick={finalizeCheckout}
+        />
+        {cartList.length > 0 && (
+          <Button text="Clear cart" onClick={() => dispatch(clearCart())} />
+        )}
+      </div>
     </div>
   );
 };

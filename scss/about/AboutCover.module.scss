@@ -5,4 +5,5 @@
     background-image: url("/images/about-cover.jpg");
     @include background-image;
     min-height: 300px;
+    margin-bottom: 1.5rem;
 }

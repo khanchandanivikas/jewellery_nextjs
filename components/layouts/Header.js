@@ -40,6 +40,7 @@ const Header = (props) => {
       const docToDelete = doc(db, "users", id);
       await deleteDoc(docToDelete);
       toast.success("Account deleted");
+      dispatch(removeUser());
       router.push("/");
     } catch (error) {
       console.log(error);

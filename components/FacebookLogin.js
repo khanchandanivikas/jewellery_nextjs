@@ -15,7 +15,6 @@ const FacebookLogin = () => {
   const handleSubmit = async () => {
     try {
       const response = await signInWithPopup(auth, googleProvider);
-      console.log(response.user);
       await setDoc(doc(db, "users", response.user.uid), {
         uid: response.user.uid,
         name: response.user.displayName,
