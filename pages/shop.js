@@ -1,7 +1,7 @@
 import ShopLanding from "../components/ShopLanding";
 import ProductFilter from "../components/ProductFilter";
 import ProductList from "../components/ProductList";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 
 const Shop = () => {
   const [filters, setFilters] = useState({});
