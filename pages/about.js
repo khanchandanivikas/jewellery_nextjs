@@ -1,8 +1,8 @@
 import styles from "../scss/about/About.module.scss";
-import AboutMission from '../about/components/AboutMission';
-import AboutCeo from '../about/components/AboutCeo';
+import AboutMission from '../components/about/AboutMission';
+import AboutCeo from '../components/about/AboutCeo';
+import AboutCover from '../components/about/AboutCover';
 import Social from '../components/Social';
-import AboutCover from '../about/components/AboutCover';
 
 const About = () => {
   return (

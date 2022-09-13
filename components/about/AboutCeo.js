@@ -1,6 +1,6 @@
 import Image from "next/image";
-import CeoImage from "../images/ceo.jpg";
-import styles from "../scss/about/AboutCeo.module.scss";
+import CeoImage from "../../images/ceo.jpg";
+import styles from "../../scss/about/AboutCeo.module.scss";
 
 const AboutCeo = () => {
   return (

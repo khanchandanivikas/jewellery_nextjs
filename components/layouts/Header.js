@@ -18,6 +18,8 @@ import styles from "../../scss/Header.module.scss";
 const Header = (props) => {
   const dispatch = useDispatch();
   const user = useSelector((state) => state.authReducer.currentUser);
+  const cartNumber = useSelector((state) => state.cartReducer.cartNumber);
+
   const logout = async () => {
     try {
       await signOut(auth);
@@ -47,7 +49,7 @@ const Header = (props) => {
         </Link>
         <Link href="/checkout">
           <a>
-            <FontAwesomeIcon icon={faBasketShopping} />
+            <FontAwesomeIcon icon={faBasketShopping} /> ({cartNumber})
           </a>
         </Link>
         {user.token && (

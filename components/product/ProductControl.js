@@ -33,7 +33,7 @@ const ProductControl = ({ product }) => {
   return (
     <div className={styles.cartItemControl}>
       <button
-        disabled={qty === 0}
+        disabled={product?.quantity === 0}
         onClick={() => decQty(product)}
       >
         -

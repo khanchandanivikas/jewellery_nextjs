@@ -1,6 +1,7 @@
 import axios from "axios";
 import { loadStripe } from "@stripe/stripe-js";
 import { useSelector } from "react-redux";
+import toast, { Toaster } from "react-hot-toast";
 import styles from "../scss/Checkout.module.scss";
 import CartItem from "../components/CartItem";
 import Button from "../components/Button";
@@ -11,7 +12,7 @@ const stripePromise = loadStripe(
 
 const Checkout = () => {
   const cartList = useSelector((state) => state.cartReducer.cart);
-  console.log(useSelector((state) => state.cartReducer.cart));
+  const user = useSelector((state) => state.authReducer.currentUser);
 
   const createCheckOutSession = async () => {
     const stripe = await stripePromise;
@@ -28,6 +29,14 @@ const Checkout = () => {
       alert(result.error.message);
     }
   };
+
+  const finalizeCheckout = () => {
+    if (user.token) {
+      createCheckOutSession();
+    } else {
+
+    }
+  }
 
   return (
     <div className={styles.carts}>

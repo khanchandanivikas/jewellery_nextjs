@@ -1,4 +1,4 @@
-import styles from "../scss/about/AboutMission.module.scss";
+import styles from "../../scss/about/AboutMission.module.scss";
 
 const AboutMission = () => {
   return (

@@ -29,12 +29,11 @@ const cartSlice = createSlice({
     decrementQuantity: (state, action) => {
       state.cartNumber--;
       const item = state.cart.find((item) => item.id === action.payload.id);
-      if (item && item.quantity > 1) {
+      if (item && item.quantity === 1) {
         item.quantity--;
+        state.cart = state.cart.filter((cartItem) => cartItem.id !== action.payload.id);
       } else {
-        state.cart.filter((cartItem) => {
-          cartItem.id !== item.id;
-        });
+        item.quantity--;
       }
     },
     removeItem: (state, action) => {
