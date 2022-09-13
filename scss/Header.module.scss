@@ -35,6 +35,10 @@
             border-left: solid 1px $light-brown;
             cursor: pointer;
         }
+
+        a {
+            color: $light-brown;
+        }
     }
 
     @include media-lg {
