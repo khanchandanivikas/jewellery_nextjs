@@ -5,17 +5,21 @@ import {
   faArrowRightFromBracket,
 } from "@fortawesome/free-solid-svg-icons";
 import { Sling as Hamburger } from "hamburger-react";
+import Swal from "sweetalert2";
 import toast, { Toaster } from "react-hot-toast";
 import Image from "next/image";
 import Link from "next/link";
+import { useRouter } from "next/router";
 import { signOut } from "firebase/auth";
-import { auth } from "../../config/firebaseConfig";
+import { auth, db } from "../../config/firebaseConfig";
+import { doc, deleteDoc } from "firebase/firestore";
 import { removeUser } from "../../store/reducers/authReducers";
 import { useDispatch, useSelector } from "react-redux";
 import Logo from "../../images/logo.png";
 import styles from "../../scss/Header.module.scss";
 
 const Header = (props) => {
+  const router = useRouter();
   const dispatch = useDispatch();
   const user = useSelector((state) => state.authReducer.currentUser);
   const cartNumber = useSelector((state) => state.cartReducer.cartNumber);
@@ -31,6 +35,38 @@ const Header = (props) => {
     }
   };
 
+  const deleteAccount = async (id) => {
+    try {
+      const docToDelete = doc(db, "users", id);
+      await deleteDoc(docToDelete);
+      toast.success("Account deleted");
+      router.push("/");
+    } catch (error) {
+      console.log(error);
+      toast.error("Error deleting account");
+    }
+  };
+
+  const account = () => {
+    if (user.token) {
+      Swal.fire({
+        title: "Logged in as:",
+        text: user.email,
+        showCancelButton: true,
+        cancelButtonText: "Ok",
+        cancelButtonColor: "#775A4C",
+        confirmButtonColor: "#d73737",
+        confirmButtonText: "Delete Account",
+      }).then((result) => {
+        if (result.isConfirmed) {
+          deleteAccount(user.id);
+        }
+      });
+    } else {
+      router.push("/login");
+    }
+  };
+
   const toggleHamburger = props.toggleHamburger;
   const hamburger = props.hamburgerState;
 
@@ -42,18 +78,16 @@ const Header = (props) => {
         </div>
       </Link>
       <div className={styles.cart_hamburger}>
-        <Link href="/login">
-          <a>
-            <FontAwesomeIcon icon={faUser} />
-          </a>
-        </Link>
+        <button onClick={account}>
+          <FontAwesomeIcon icon={faUser} />
+        </button>
         <Link href="/checkout">
           <a>
             <FontAwesomeIcon icon={faBasketShopping} /> ({cartNumber})
           </a>
         </Link>
         {user.token && (
-          <button onClick={() => logout()}>
+          <button onClick={logout}>
             <FontAwesomeIcon icon={faArrowRightFromBracket} />
           </button>
         )}

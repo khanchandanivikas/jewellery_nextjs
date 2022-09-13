@@ -1,7 +1,9 @@
 import axios from "axios";
 import { loadStripe } from "@stripe/stripe-js";
 import { useSelector } from "react-redux";
+import { useRouter } from "next/router";
 import toast, { Toaster } from "react-hot-toast";
+import Swal from "sweetalert2";
 import styles from "../scss/Checkout.module.scss";
 import CartItem from "../components/CartItem";
 import Button from "../components/Button";
@@ -11,6 +13,7 @@ const stripePromise = loadStripe(
 );
 
 const Checkout = () => {
+  const router = useRouter();
   const cartList = useSelector((state) => state.cartReducer.cart);
   const user = useSelector((state) => state.authReducer.currentUser);
 
@@ -31,12 +34,26 @@ const Checkout = () => {
   };
 
   const finalizeCheckout = () => {
-    if (user.token) {
-      createCheckOutSession();
+    if (cartList.length > 0) {
+      if (user.token) {
+        createCheckOutSession();
+      } else {
+        Swal.fire({
+          icon: "error",
+          title: "Not Logged in",
+          text: "You must login/signup to order.",
+          confirmButtonColor: "#775A4C",
+          confirmButtonText: "Login",
+        }).then((result) => {
+          if (result.isConfirmed) {
+            router.push("/login");
+          }
+        });
+      }
     } else {
-
+      router.push("/shop");
     }
-  }
+  };
 
   return (
     <div className={styles.carts}>
@@ -47,14 +64,11 @@ const Checkout = () => {
           })}
         </tbody>
       </table>
-      {cartList.length > 0 ? (
-        <Button text="Checkout" onClick={createCheckOutSession} />
-      ) : (
-        <>
-          <p>No Items in cart</p>
-          <Button text="Go to store" url="/shop" />
-        </>
-      )}
+      {cartList.length < 1 && <p>No Items in cart</p>}
+      <Button
+        text={cartList.length > 0 ? "Checkout" : "Continue shopping"}
+        onClick={finalizeCheckout}
+      />
     </div>
   );
 };

@@ -22,8 +22,8 @@ export default async (req, res) => {
     },
     line_items: transformedItems,
     mode: "payment",
-    success_url: "http://localhost:3000/",
-    cancel_url: "http://localhost:3000/"
+    success_url: "https://jewellery-nextjs.vercel.app/",
+    cancel_url: "https://jewellery-nextjs.vercel.app/"
   });
 
   res.status(200).json({ id: session.id });

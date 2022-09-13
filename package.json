@@ -29,7 +29,8 @@
     "react-redux": "^8.0.2",
     "redux-persist": "^6.0.0",
     "sass": "^1.54.0",
-    "stripe": "^10.7.0"
+    "stripe": "^10.7.0",
+    "sweetalert2": "^11.4.32"
   },
   "devDependencies": {
     "eslint": "8.18.0",
