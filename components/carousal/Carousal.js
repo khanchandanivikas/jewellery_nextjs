@@ -1,4 +1,4 @@
-import styles from "../scss/carousal/Carousal.module.scss";
+import styles from "../../scss/carousal/Carousal.module.scss";
 
 const Carousal = ({ images, index, url }) => {
   return (

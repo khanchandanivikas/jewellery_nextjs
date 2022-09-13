@@ -24,7 +24,7 @@ const ShopLanding = () => {
         <p className={styles.shopLanding_content_text}>
           Fine jewellery to feel confident in
         </p>
-        <Button text="Shop best sellers" />
+        <Button text="Shop best sellers" url="#products" />
       </div>
     </section>
   );

@@ -2,12 +2,20 @@ import { auth, db } from "../config/firebaseConfig";
 import { doc, setDoc } from "firebase/firestore";
 import { createUserWithEmailAndPassword } from "firebase/auth";
 import { useState } from "react";
+import { addUser } from "../store/reducers/authReducers";
+import { useDispatch } from "react-redux";
+import { useRouter } from 'next/router';
+import toast, { Toaster } from "react-hot-toast";
 import styles from "../scss/Form.module.scss";
 import Input from "../components/Input";
 import Button from "../components/Button";
 import Loader from "./Loader";
 
 const RegisterForm = () => {
+  const router = useRouter();
+
+  const dispatch = useDispatch();
+
   const [isLoading, setIsLoading] = useState(false);
 
   let initialState = {
@@ -39,7 +47,6 @@ const RegisterForm = () => {
         state.email,
         state.password
       );
-      console.log(response.user);
       await setDoc(doc(db, "users", response.user.uid), {
         uid: response.user.uid,
         name: state.name,
@@ -50,9 +57,18 @@ const RegisterForm = () => {
         auth: "email"
       });
       setIsLoading(false);
+      dispatch(addUser({
+        id: response.user.uid,
+        name: response.user.displayName,
+        email: response.user.email,
+        token: response.user.accessToken
+      }));
+      router.push('/');
+      toast.success("Account created Successfully");
     } catch (error) {
       console.log(error);
       setIsLoading(false);
+      toast.error("Internal error. Please try again later");
     }
     setState(initialState);
   };
@@ -77,6 +93,7 @@ const RegisterForm = () => {
         type="password"
         name="password"
         placeholder="Password"
+        autocomplete="off"
         value={state.password}
         onChange={handleChange}
       />
@@ -102,6 +119,7 @@ const RegisterForm = () => {
         onChange={handleChange}
       />
       <Button type="submit" text={isLoading ? <Loader /> : "Register"} />
+      <Toaster />
     </form>
   );
 };

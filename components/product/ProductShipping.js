@@ -5,7 +5,7 @@ import {
   faShield,
   faR,
 } from "@fortawesome/free-solid-svg-icons";
-import styles from "../scss/ProductShipping.module.scss";
+import styles from "../../scss/product/ProductShipping.module.scss";
 
 const ProductShipping = () => {
   return (

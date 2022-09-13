@@ -10,23 +10,30 @@ const Layout = ({ children }) => {
   const timeline = gsap.timeline({ defaults: { ease: "power1.out" } });
   const toggleHamburger = () => {
     setHamburgerState(!hamburgerState);
-    {hamburgerState ? timeline.to("#ham li", {
-      translateX: "0",
-      opacity: 1,
-      duration: 0.6,
-    }) : timeline.from("#ham li", {
-      translateX: "150px",
-      opacity: 0,
-      duration: 0.6,
-      delay: 0.5,
-      stagger: 0.2,
-    })}
+    {
+      hamburgerState
+        ? timeline.to("#ham li", {
+            translateX: "0",
+            opacity: 1,
+            duration: 0.6,
+          })
+        : timeline.from("#ham li", {
+            translateX: "150px",
+            opacity: 0,
+            duration: 0.6,
+            delay: 0.5,
+            stagger: 0.2,
+          });
+    }
   };
 
   return (
     <>
       <Meta />
-      <Header toggleHamburger={toggleHamburger} />
+      <Header
+        hamburgerState={hamburgerState}
+        toggleHamburger={toggleHamburger}
+      />
       <Hamburger
         hamburgerState={hamburgerState}
         toggleHamburger={toggleHamburger}

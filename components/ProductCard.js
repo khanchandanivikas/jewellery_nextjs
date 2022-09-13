@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useDispatch } from "react-redux";
 import { addToCart } from "../store/reducers/cartReducers";
+import toast, { Toaster } from "react-hot-toast";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCircle, faBasketShopping } from "@fortawesome/free-solid-svg-icons";
 import styles from "../scss/ProductCard.module.scss";
@@ -11,6 +12,12 @@ const ProductCard = (props) => {
   const product = props.product;
 
   const { images, name, price, id } = product;
+
+  const addCart = (product) => {
+    dispatch(addToCart(product));
+    toast.success(`${product.name}` + " added to cart");
+  };
+
   return (
     <div className={styles.products_item}>
       <div className={styles.products_item_image}>
@@ -32,12 +39,13 @@ const ProductCard = (props) => {
           </p>
         </div>
         <button
-          onClick={() => dispatch(addToCart(product))}
+          onClick={() => addCart(product)}
           className={styles.products_item_details_cartBtn}
         >
           <FontAwesomeIcon icon={faBasketShopping} />
         </button>
       </div>
+      <Toaster />
     </div>
   );
 };

@@ -1,7 +1,7 @@
 import { useState } from "react";
 import styles from "../scss/landing/Landing.module.scss";
 import LandingContent from "../components/LandingContent";
-import Carousal from "../components/Carousal";
+import Carousal from "../components/carousal/Carousal";
 import LandingSlider from "../components/LandingSlider";
 
 export default function Home() {

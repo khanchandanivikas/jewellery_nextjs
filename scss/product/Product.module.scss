@@ -5,7 +5,7 @@
     padding: 1.5rem;
 
     @include media-lg {
-        @include grid(1fr 1fr, flex-start, flex-start);
-        padding: 1.5rem 5%;
+        @include grid(1fr 1fr);
+        padding: 3rem 5%;
     }   
 }

@@ -1,8 +1,8 @@
-import ProductCarousal from "../../components/ProductCarousal";
-import ProductHeader from "../../components/ProductHeader";
-import ProductDescription from "../../components/ProductDescription";
-import ProductShipping from "../../components/ProductShipping";
-import styles from "../../scss/Product.module.scss";
+import ProductCarousal from "../../components/product/ProductCarousal";
+import ProductHeader from "../../components/product/ProductHeader";
+import ProductDescription from "../../components/product/ProductDescription";
+import ProductShipping from "../../components/product/ProductShipping";
+import styles from "../../scss/product/Product.module.scss";
 import Products from "../../assets/products.json";
 
 export async function getServerSidePaths() {
@@ -25,11 +25,11 @@ const Product = ({ product }) => {
   return (
     <div className={styles.productWrapper}>
       <ProductCarousal product={product} />
-      <div>
+      <section>
         <ProductHeader product={product} />
         <ProductDescription product={product} />
         <ProductShipping product={product} />
-      </div>
+      </section>
     </div>
   );
 };

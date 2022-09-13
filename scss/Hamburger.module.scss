@@ -7,7 +7,7 @@
     background-color: $dark-brown;
     height: 100vh;
     width: 100vw;
-    top: 58px;
+    top: 3rem;
     transition: all 0.7s ease-in-out;
     z-index: 2;
 }
@@ -21,18 +21,21 @@
     transform: translateX(0);
 
     &_list {
-        // @include flex-center(column, flex-start, flex-start);
         @include flex(column);
         list-style: none;
-        margin-top: 1rem;
+        margin-top: 1.5rem;
 
         &_link {
-            margin: 1rem 1.5rem 1rem;
+            margin: 0.5rem 1.5rem;
 
             a {
                 color: $light-brown;
                 text-decoration: none;
                 font-weight: 600;
+            }
+
+            @include media-lg {
+                margin: 0.5rem 5%;
             }
         }
     }

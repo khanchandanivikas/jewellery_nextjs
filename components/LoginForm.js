@@ -3,12 +3,16 @@ import { signInWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../config/firebaseConfig";
 import { addUser } from "../store/reducers/authReducers";
 import { useDispatch } from "react-redux";
+import { useRouter } from 'next/router';
+import toast, { Toaster } from "react-hot-toast";
 import styles from "../scss/Form.module.scss";
 import Input from "../components/Input";
 import Button from "../components/Button";
 import Loader from "./Loader";
 
 const LoginForm = () => {
+  const router = useRouter();
+
   const dispatch = useDispatch();
 
   const [isLoading, setIsLoading] = useState(false);
@@ -38,16 +42,19 @@ const LoginForm = () => {
         state.email,
         state.password
       );
-      console.log(response);
       dispatch(addUser({
         id: response.user.uid,
         name: response.user.displayName,
         email: response.user.email,
+        token: response.user.accessToken
       }));
       setIsLoading(false);
+      router.push('/');
+      toast.success("Authentication successful");
     } catch (error) {
       console.log(error);
       setIsLoading(false);
+      toast.error("Authentication error. Please check the datas");
     }
     setState(initialState);
   };
@@ -65,10 +72,12 @@ const LoginForm = () => {
         type="password"
         name="password"
         placeholder="Password"
+        autocomplete="off"
         value={state.password}
         onChange={handleChange}
       />
       <Button type="submit" text={isLoading ? <Loader /> : "Login"} />
+      <Toaster />
     </form>
   );
 };

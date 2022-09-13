@@ -1,6 +1,6 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCircle, faStar } from "@fortawesome/free-solid-svg-icons";
-import styles from "../scss/ProductHeader.module.scss";
+import styles from "../../scss/product/ProductHeader.module.scss";
 import ProductControl from "./ProductControl";
 
 const ProductHeader = ({ product }) => {

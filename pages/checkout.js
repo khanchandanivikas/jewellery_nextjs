@@ -10,7 +10,8 @@ const stripePromise = loadStripe(
 );
 
 const Checkout = () => {
-  const cartList = useSelector((state) => state.cart);
+  const cartList = useSelector((state) => state.cartReducer.cart);
+  console.log(useSelector((state) => state.cartReducer.cart));
 
   const createCheckOutSession = async () => {
     const stripe = await stripePromise;
@@ -37,7 +38,14 @@ const Checkout = () => {
           })}
         </tbody>
       </table>
-      <Button text="Checkout" onClick={createCheckOutSession} />
+      {cartList.length > 0 ? (
+        <Button text="Checkout" onClick={createCheckOutSession} />
+      ) : (
+        <>
+          <p>No Items in cart</p>
+          <Button text="Go to store" url="/shop" />
+        </>
+      )}
     </div>
   );
 };

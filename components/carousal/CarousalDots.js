@@ -1,6 +1,6 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCircle } from "@fortawesome/free-solid-svg-icons";
-import styles from "../scss/CarousalDots.module.scss";
+import styles from "../../scss/carousal/CarousalDots.module.scss";
 
 const CarousalDots = ({ images, index, setIndex }) => {
   const renderPagination = () => {

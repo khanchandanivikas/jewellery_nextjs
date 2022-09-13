@@ -2,8 +2,7 @@
 @import "../variables";
 
 .productHeaderContainer {
-    @include flex-center(column, space-between, flex-start);
-    gap: 1.5rem;
+    @include flex(column);
 
     .name {
         color: $dark-brown;
@@ -11,7 +10,7 @@
     }
 
     .description {
-        @include flex-center(row, center, flex-start);
+        @include flex(row);
 
         svg:nth-child(1) {
             color: #E9D590;

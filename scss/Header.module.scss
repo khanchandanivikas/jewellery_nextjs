@@ -9,6 +9,7 @@
     border-bottom: solid 2px $light-brown;
     z-index: 2;
     padding-left: 1.5rem;
+    height: 3rem;
 
     // logo
     .logo {
@@ -30,7 +31,6 @@
         // hamburger
         .hamburgerIcon {
             color: $light-brown;
-            padding: 20px;
             background-color: $dark-brown;
             border-left: solid 1px $light-brown;
             cursor: pointer;

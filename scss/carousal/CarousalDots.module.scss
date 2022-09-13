@@ -2,9 +2,11 @@
 @import "../variables";
 
 .landingCarousal_dots {
-    @include flex-center(row, center, center);
+    @include flex(row);
+    justify-content: center;
+    align-items: center;
     gap: 1rem;
-    margin-bottom: 1rem;
+    margin: 1.5rem 0;
 
     .dotActive,
     .dotInactive {

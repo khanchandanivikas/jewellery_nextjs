@@ -1,5 +1,5 @@
-import Button from "./Button";
 import styles from "../scss/landing/LandingContent.module.scss";
+import Button from "./Button";
 
 const LandingContent = () => {
   return (
@@ -12,7 +12,7 @@ const LandingContent = () => {
         jewellery; laden with precious diamonds, sapphires and esmeralds in gold
         of an exceptional quality
       </p>
-      <Button text="Shop now" />
+      <Button text="Shop now" url="/shop" />
     </section>
   );
 };

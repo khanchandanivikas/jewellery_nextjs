@@ -1,6 +1,6 @@
 import Image from "next/image";
 import styles from "../scss/CartItem.module.scss";
-import ProductControl from "./ProductControl";
+import ProductControl from "./product/ProductControl";
 
 const CartItem = ({ cart }) => {
   return (
