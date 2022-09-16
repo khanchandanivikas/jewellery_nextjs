@@ -9,7 +9,7 @@ const LandingContent = () => {
       </h1>
       <p>
         Nothing adds a note of glamour to your ensemble like our own luxury
-        jewellery; laden with precious diamonds, sapphires and esmeralds in gold
+        jewellery, laden with precious diamonds, sapphires and esmeralds in gold
         of an exceptional quality
       </p>
       <Button text="Shop now" url="/shop" />

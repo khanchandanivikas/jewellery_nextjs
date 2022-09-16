@@ -1,10 +1,10 @@
 import { auth, db } from "../config/firebaseConfig";
 import { doc, setDoc } from "firebase/firestore";
-import { createUserWithEmailAndPassword } from "firebase/auth";
+import { createUserWithEmailAndPassword, sendEmailVerification } from "firebase/auth";
 import { useState } from "react";
 import { addUser } from "../store/reducers/authReducers";
 import { useDispatch } from "react-redux";
-import { useRouter } from 'next/router';
+import { useRouter } from "next/router";
 import toast, { Toaster } from "react-hot-toast";
 import styles from "../scss/Form.module.scss";
 import Input from "../components/Input";
@@ -47,6 +47,7 @@ const RegisterForm = () => {
         state.email,
         state.password
       );
+      await sendEmailVerification(auth.currentUser);
       await setDoc(doc(db, "users", response.user.uid), {
         uid: response.user.uid,
         name: state.name,
@@ -54,16 +55,18 @@ const RegisterForm = () => {
         telephone: state.telephone,
         state: state.state,
         address: state.address,
-        auth: "email"
+        auth: "email",
       });
       setIsLoading(false);
-      dispatch(addUser({
-        id: response.user.uid,
-        name: response.user.displayName,
-        email: response.user.email,
-        token: response.user.accessToken
-      }));
-      router.push('/');
+      dispatch(
+        addUser({
+          id: response.user.uid,
+          name: response.user.displayName,
+          email: response.user.email,
+          token: response.user.accessToken,
+        })
+      );
+      router.push("/");
       toast.success("Account created Successfully");
     } catch (error) {
       console.log(error);

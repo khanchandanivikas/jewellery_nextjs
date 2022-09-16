@@ -5,8 +5,8 @@
         "details": ["Made in gold vermeil: a thick 18k gold layer on sterling silver.", "Diameter: 17.15 mm.", "Width: 3.8 - 6.0 mm."],
         "materials": ["Gold Vermeil"],
         "category": "watch",
-        "color": "gold",
-        "price": 3995,
+        "color": ["gold", "silver"],
+        "price": 39.95,
         "currency": "EUR",
         "images": [{
             "name": "rolex1.jpg"
@@ -25,8 +25,8 @@
         "details": ["Made in silver vermeil: a thick 18k gold layer on sterling silver.", "Diameter: 17.15 mm.", "Width: 3.8 - 6.0 mm."],
         "materials": ["Silver Vermeil"],
         "category": "necklace",
-        "color": "silver",
-        "price": 5995,
+        "color": ["silver"],
+        "price": 59.95,
         "currency": "EUR",
         "images": [{
             "name": "necklace1.jpg"

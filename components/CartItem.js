@@ -7,16 +7,16 @@ const CartItem = ({ cart }) => {
     <tr className={styles.cartItem}>
       <td className={styles.cartTitle}>
         <Image
-          src="/images/products/rolex1.jpg"
+          src={`/images/products/${cart.images[0].name}`}
           alt="product"
           width={50}
           height={50}
         />
         {cart.name}
       </td>
-      <td className={styles.cartDescription}>{cart.name}</td>
+      <td className={styles.cartDescription}>{cart.name} {cart.color}</td>
       <td>
-        <ProductControl product={cart} />
+        <ProductControl product={cart} colorSelected={cart.color} />
       </td>
       <td className={styles.cartItemTotal}>{cart.price * cart.quantity} €</td>
     </tr>

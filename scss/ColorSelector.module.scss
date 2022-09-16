@@ -1,0 +1,46 @@
+@import "mixins";
+@import "variables";
+
+.colorSelector_container {
+    .selector {
+        @include flex(row);
+        align-items: center;
+        gap: 1rem;
+    }
+
+    .gold {
+        color: #E9D590;
+        border-radius: 50%;
+        border: solid 1px transparent;
+        padding: 3px;
+
+        &_active {
+            color: #E9D590;
+            border-radius: 50%;
+            border: solid 1px $dark-brown;
+            padding: 3px;
+            @include flex(row);
+        }
+    }
+
+    .silver {
+        color: #C8C8C8;
+        border-radius: 50%;
+        margin-right: 10px;
+        border: solid 1px transparent;
+        padding: 3px;
+
+        &_active {
+            color: #C8C8C8;
+            border-radius: 50%;
+            margin-right: 10px;
+            border: solid 1px $dark-brown;
+            padding: 3px;
+            @include flex(row);
+        }
+    }
+
+    .description {
+        margin-top: 10px;
+    }
+}

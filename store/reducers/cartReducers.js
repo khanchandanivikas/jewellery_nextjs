@@ -9,31 +9,47 @@ const cartSlice = createSlice({
     addToCart: (state, action) => {
       state.cartNumber++;
       const itemInCart = state.cart.find(
-        (item) => item.id === action.payload.id
+        (item) =>
+          item.id === action.payload.product.id &&
+          item.color === action.payload.color
       );
       if (itemInCart) {
         itemInCart.quantity++;
       } else {
-        state.cart.push({ ...action.payload, quantity: 1 });
+        state.cart.push({
+          ...action.payload.product,
+          color: action.payload.color,
+          quantity: 1,
+        });
       }
     },
     incrementQuantity: (state, action) => {
       state.cartNumber++;
-      const item = state.cart.find((item) => item.id === action.payload.id);
+      const item = state.cart.find(
+        (item) =>
+          item.id === action.payload.product.id &&
+          item.color === action.payload.color
+      );
       if (item) {
         item.quantity++;
       } else {
-        state.cart.push({ ...action.payload, quantity: 1 });
+        state.cart.push({
+          ...action.payload.product,
+          color: action.payload.color,
+          quantity: 1,
+        });
       }
     },
     decrementQuantity: (state, action) => {
       state.cartNumber--;
-      const item = state.cart.find((item) => item.id === action.payload.id);
+      const item = state.cart.find(
+        (item) =>
+          item.id === action.payload.product.id &&
+          item.color === action.payload.color
+      );
       if (item && item.quantity === 1) {
         item.quantity--;
-        state.cart = state.cart.filter(
-          (cartItem) => cartItem.id !== action.payload.id
-        );
+        state.cart = state.cart.filter((cartItem) => cartItem !== item);
       } else {
         item.quantity--;
       }

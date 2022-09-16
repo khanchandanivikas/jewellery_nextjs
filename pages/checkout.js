@@ -62,7 +62,7 @@ const Checkout = () => {
       <table className={styles.cartTable}>
         <tbody>
           {cartList?.map((cart) => {
-            return <CartItem key={cart.id} cart={cart} />;
+            return <CartItem key={cart.id + cart.color} cart={cart} />;
           })}
         </tbody>
       </table>

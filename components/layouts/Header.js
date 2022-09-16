@@ -10,7 +10,7 @@ import toast, { Toaster } from "react-hot-toast";
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/router";
-import { signOut } from "firebase/auth";
+import { signOut, deleteUser } from "firebase/auth";
 import { auth, db } from "../../config/firebaseConfig";
 import { doc, deleteDoc } from "firebase/firestore";
 import { removeUser } from "../../store/reducers/authReducers";
@@ -35,10 +35,11 @@ const Header = (props) => {
     }
   };
 
-  const deleteAccount = async (id) => {
+  const deleteAccount = async (user) => {
     try {
-      const docToDelete = doc(db, "users", id);
+      const docToDelete = doc(db, "users", user.uid);
       await deleteDoc(docToDelete);
+      await deleteUser(user);
       toast.success("Account deleted");
       dispatch(removeUser());
       router.push("/");
@@ -60,7 +61,7 @@ const Header = (props) => {
         confirmButtonText: "Delete Account",
       }).then((result) => {
         if (result.isConfirmed) {
-          deleteAccount(user.id);
+          deleteAccount(auth.currentUser);
         }
       });
     } else {
