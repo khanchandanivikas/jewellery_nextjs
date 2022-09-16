@@ -29,7 +29,7 @@ const ColorSelector = ({ color, colorSelected, setColorSelected }) => {
           );
         })}
       </div>
-      <p className={styles.description}>24k gold</p>
+      <p className={styles.description}>{color[colorSelected] === "gold" ? "24k gold" : "925 silver"}</p>
     </div>
   );
 };

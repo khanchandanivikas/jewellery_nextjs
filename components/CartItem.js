@@ -1,4 +1,5 @@
 import Image from "next/image";
+import {formatCurrency} from "../utils/formatCurrency";
 import styles from "../scss/CartItem.module.scss";
 import ProductControl from "./product/ProductControl";
 
@@ -18,7 +19,7 @@ const CartItem = ({ cart }) => {
       <td>
         <ProductControl product={cart} colorSelected={cart.color} />
       </td>
-      <td className={styles.cartItemTotal}>{cart.price * cart.quantity} €</td>
+      <td className={styles.cartItemTotal}>{formatCurrency(cart.price * cart.quantity)}</td>
     </tr>
   );
 };

@@ -10,8 +10,7 @@
     // product details 
     &_details {
         @include grid(3fr 1fr);
-        grid-template-rows: 0.8fr 1fr;
-        gap: 0;
+        gap: 1.5rem;
 
         // product name
         a {

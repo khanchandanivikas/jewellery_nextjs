@@ -1,8 +1,10 @@
 import Image from "next/image";
 import Link from "next/link";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { addToCart } from "../store/reducers/cartReducers";
+import { formatCurrency } from "../utils/formatCurrency";
+import Rating from "./Rating";
 import toast, { Toaster } from "react-hot-toast";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBasketShopping } from "@fortawesome/free-solid-svg-icons";
@@ -34,7 +36,10 @@ const ProductCard = (props) => {
       </div>
       <div className={styles.products_item_details}>
         <Link href={`/product/${id}`}>{name}</Link>
-        <p className={styles.products_item_details_price}>{price} €</p>
+        <span className={styles.products_item_details_price}>
+          {formatCurrency(product.price)}
+        </span>
+        <Rating rate={product?.rating?.rate} count={product?.rating?.count} />
         <ColorSelector
           color={color}
           colorSelected={colorSelected}

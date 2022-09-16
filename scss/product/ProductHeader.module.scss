@@ -8,31 +8,4 @@
         color: $dark-brown;
         text-transform: uppercase;
     }
-
-    .description {
-        @include flex(row);
-
-        svg:nth-child(1) {
-            color: #E9D590;
-            font-size: 0.9rem;
-            border: solid 1px $dark-brown;
-            border-radius: 50%;
-            padding: 3px;
-        }
-
-        svg:nth-child(2) {
-            color: #C8C8C8;
-            font-size: 0.9rem;
-            margin-left: 20px;
-            margin-right: 10px;
-        }
-    }
-
-    .rating {
-        color: $dark-brown;
-
-        svg {
-            margin-right: 10px;
-        }
-    }
 }

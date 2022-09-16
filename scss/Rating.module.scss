@@ -1,0 +1,17 @@
+@import "mixins";
+@import "variables";
+
+.rating {
+    @include flex(row);
+    align-items: center;
+    gap: 1rem;
+    grid-column: 1/-1;
+
+    .fullStar {
+        color: $dark-brown;
+    }
+
+    .emptyStar {
+        color: $dark-brown;
+    }
+}

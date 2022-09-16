@@ -1,5 +1,5 @@
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faStar } from "@fortawesome/free-solid-svg-icons";
+import { formatCurrency } from "../../utils/formatCurrency";
+import Rating from "../Rating";
 import styles from "../../scss/product/ProductHeader.module.scss";
 import ProductControl from "./ProductControl";
 import { useState } from "react";
@@ -11,19 +11,14 @@ const ProductHeader = ({ product }) => {
   return (
     <div className={styles.productHeaderContainer}>
       <h3 className={styles.name}>
-        {product.name} - {product.price}
+        {product.name} - {formatCurrency(product.price)}
       </h3>
       <ColorSelector
         color={product.color}
         colorSelected={colorSelected}
         setColorSelected={setColorSelected}
       />
-      <div className={styles.rating}>
-        <FontAwesomeIcon icon={faStar} />
-        <FontAwesomeIcon icon={faStar} />
-        <FontAwesomeIcon icon={faStar} />
-        <FontAwesomeIcon icon={faStar} />
-      </div>
+      <Rating rate={product?.rating?.rate} count={product?.rating?.count} />
       <ProductControl product={product} colorSelected={colorSelected} />
     </div>
   );
