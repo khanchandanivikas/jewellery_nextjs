@@ -6,7 +6,7 @@
         "materials": ["Gold Vermeil"],
         "category": "watch",
         "color": ["gold", "silver"],
-        "price": 39.95,
+        "price": 3995,
         "currency": "EUR",
         "images": [{
             "name": "rolex1.jpg"
@@ -26,7 +26,7 @@
         "materials": ["Silver Vermeil"],
         "category": "necklace",
         "color": ["silver"],
-        "price": 59.95,
+        "price": 5995,
         "currency": "EUR",
         "images": [{
             "name": "necklace1.jpg"
