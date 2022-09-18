@@ -5,12 +5,14 @@ import { useState } from "react";
 
 const Shop = () => {
   const [filters, setFilters] = useState({});
+  console.log(filters);
   const [sort, setSort] = useState("newest");
   const handleFilters = (e) => {
     if (e.target.value) {
       setFilters({ ...filters, [e.target.name]: e.target.value });
     } else {
-      setFilters({...filters});
+      delete filters[e.target.name];
+      setFilters({ ...filters });
     }
   };
 

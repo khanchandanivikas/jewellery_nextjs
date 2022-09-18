@@ -3,7 +3,7 @@ import styles from "../scss/ProductFilter.module.scss";
 const ProductFilter = ({ setSort, handleFilters }) => {
   return (
     <div className={styles.filterBox}>
-      <h2>Necklaces</h2>
+      <h2>Catalogue</h2>
       <div className={styles.filterBox_dropdowns}>
       <select
           name="category"

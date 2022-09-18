@@ -37,7 +37,7 @@ const ProductCard = (props) => {
       <div className={styles.products_item_details}>
         <Link href={`/product/${id}`}>{name}</Link>
         <span className={styles.products_item_details_price}>
-          {formatCurrency(product.price)}
+          {formatCurrency(price)}
         </span>
         <Rating rate={product?.rating?.rate} count={product?.rating?.count} />
         <ColorSelector

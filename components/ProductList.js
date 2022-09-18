@@ -10,7 +10,7 @@ const ProductList = ({ filters, sort }) => {
     setFilteredProducts(
       Products.filter((item) =>
         Object.entries(filters).every(([key, value]) =>
-          item[key].includes(value)
+          item[key]?.includes(value)
         )
       )
     );
@@ -34,9 +34,13 @@ const ProductList = ({ filters, sort }) => {
 
   return (
     <section id="products" className={styles.products}>
-      {filteredProducts.map((product) => {
-        return <ProductCard key={product.id} product={product} />;
-      })}
+      {filteredProducts.length > 0 ? (
+        filteredProducts.map((product) => {
+          return <ProductCard key={product.id} product={product} />;
+        })
+      ) : (
+        <p>No matching products</p>
+      )}
     </section>
   );
 };
