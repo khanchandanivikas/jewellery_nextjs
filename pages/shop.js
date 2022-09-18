@@ -10,7 +10,8 @@ const Shop = () => {
     if (e.target.value) {
       setFilters({ ...filters, [e.target.name]: e.target.value });
     } else {
-      delete filters.{e.target.name};
+      const key = e.target.name;
+      delete filters.key;
       setFilters({...filters});
     }
   };
