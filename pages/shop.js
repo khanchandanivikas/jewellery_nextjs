@@ -10,6 +10,7 @@ const Shop = () => {
     if (e.target.value) {
       setFilters({ ...filters, [e.target.name]: e.target.value });
     } else {
+      delete filters.[e.target.name];
       setFilters({...filters});
     }
   };
