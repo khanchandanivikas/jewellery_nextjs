@@ -7,14 +7,14 @@ import LandingSlider from "../components/LandingSlider";
 export default function Home() {
   const images = [
     {
-      name: "landing-slider.jpg",
+      name: "women_collection.jpg",
       number: "1",
       title: "Bright Side Collection",
     },
     {
-      name: "landing-carousal.jpg",
+      name: "mens_collection.jpg",
       number: "2",
-      title: "Dark Side Collection",
+      title: "Men's side Collection",
     },
   ];
   

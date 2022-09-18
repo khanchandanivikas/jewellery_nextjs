@@ -5,6 +5,19 @@ const ProductFilter = ({ setSort, handleFilters }) => {
     <div className={styles.filterBox}>
       <h2>Necklaces</h2>
       <div className={styles.filterBox_dropdowns}>
+      <select
+          name="category"
+          onChange={handleFilters}
+          className={styles.filterBox_dropdowns_filter}
+        >
+          <option disabled>Category</option>
+          <option value="">all</option>
+          <option>bracelet</option>
+          <option>earring</option>
+          <option>necklace</option>
+          <option>ring</option>
+          <option>watch</option>
+        </select>
         <select
           name="color"
           onChange={handleFilters}

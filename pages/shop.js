@@ -7,7 +7,11 @@ const Shop = () => {
   const [filters, setFilters] = useState({});
   const [sort, setSort] = useState("newest");
   const handleFilters = (e) => {
-    setFilters({ ...filters, [e.target.name]: e.target.value });
+    if (e.target.value) {
+      setFilters({ ...filters, [e.target.name]: e.target.value });
+    } else {
+      setFilters({...filters});
+    }
   };
 
   return (
