@@ -4,6 +4,8 @@ import Header from "../layouts/Header";
 import Footer from "../layouts/Footer";
 import Hamburger from "../layouts/Hamburger";
 import Meta from "./Meta";
+import Link from "next/link";
+import CookieConsent from "react-cookie-consent";
 
 const Layout = ({ children }) => {
   const [hamburgerState, setHamburgerState] = useState(false);
@@ -40,6 +42,24 @@ const Layout = ({ children }) => {
       />
       <main>{children}</main>
       <Footer />
+      <CookieConsent
+        buttonText="Accept"
+        buttonStyle={{
+          backgroundColor: "#775A4C",
+          color: "white",
+          border: "1px solid #ccc"
+        }}
+      >
+        <span>
+          This website uses cookies. If you want to continue, please accept its
+          use. Read more about our cookie policies.
+        </span>
+        <Link href="/">
+          <a target="blank" className="text-white">
+            cookie policies
+          </a>
+        </Link>
+      </CookieConsent>
     </>
   );
 };

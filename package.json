@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "postbuild": "next-sitemap --config next-sitemap.js"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.1.1",
@@ -22,14 +23,18 @@
     "gsap": "^3.10.4",
     "hamburger-react": "^2.5.0",
     "next": "12.1.6",
+    "next-sitemap": "^3.1.22",
+    "nextjs-progressbar": "^0.0.14",
     "nodemailer": "^6.7.8",
     "react": "18.2.0",
+    "react-cookie-consent": "^8.0.1",
     "react-dom": "18.2.0",
     "react-google-recaptcha-v3": "^1.10.0",
     "react-hot-toast": "^2.3.0",
     "react-redux": "^8.0.2",
     "redux-persist": "^6.0.0",
     "sass": "^1.54.0",
+    "sitemap": "^7.1.1",
     "stripe": "^10.7.0",
     "sweetalert2": "^11.4.32"
   },

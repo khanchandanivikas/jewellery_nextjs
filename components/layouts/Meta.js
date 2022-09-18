@@ -8,7 +8,7 @@ const Meta = ({ title, description }) => {
       <meta charSet="utf-8" />
       <meta name="robots" content="index,follow" />
       {/* Favicons */}
-      {/* <link rel="icon" href="/solarenergylogo.ico" /> */}
+      <link rel="icon" href="/favicon.ico" />
       <link href="/img/apple-touch-icon.png" rel="apple-touch-icon"></link>
     </Head>
   );

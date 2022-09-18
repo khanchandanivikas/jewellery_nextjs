@@ -76,7 +76,7 @@ const Header = (props) => {
     <header className={styles.myHeader}>
       <Link href="/">
         <div className={styles.logo}>
-          <Image src={Logo} alt="jewellery_logo" width={140} height={40} />
+          <Image src={Logo} alt="jewellery_logo" width={100} height={40} />
         </div>
       </Link>
       <div className={styles.cart_hamburger}>
