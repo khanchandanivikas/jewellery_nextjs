@@ -4,12 +4,12 @@ import { getFirestore } from "firebase/firestore";
 
 // app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyDhK1-aL_qxQYiCI9ZLxyVM32ICcTm6kug",
-  authDomain: "jewellery-store-d0492.firebaseapp.com",
-  projectId: "jewellery-store-d0492",
-  storageBucket: "jewellery-store-d0492.appspot.com",
-  messagingSenderId: "360841897972",
-  appId: "1:360841897972:web:bcb038cb3bb2b876ac7ba1"
+  apiKey: process.env.NEXT_PUBLIC_FIREBASE_API_KEY,
+  authDomain: process.env.NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN,
+  projectId: process.env.NEXT_PUBLIC_FIREBASE_PROJECT_ID,
+  storageBucket: process.env.NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: process.env.NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID,
+  appId: process.env.NEXT_PUBLIC_FIREBASE_APP_ID
 };
 
 // Initialize Firebase
